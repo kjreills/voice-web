@@ -1,0 +1,11 @@
+@import url('../../../vars.css');
+
+.profile-download {
+    color: var(--near-black);
+    margin-left: 5em;
+
+    & h2 {
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+}

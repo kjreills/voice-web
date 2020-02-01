@@ -791,6 +791,9 @@ why-delete-recordings = Common Voice recordings are used by academics, small bus
     Can you let us know why you would like your recordings deleted?
 profile-form-delete = Delete Profile
 
+## Profile Download
+download-header = Need to download your data?
+download-subheader = Tell us what info you'd like to download:
 
 ## Landing
 welcome-staff = Welcome { $company } staff!

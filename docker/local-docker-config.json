@@ -7,5 +7,10 @@
     "secretAccessKey": "local-credential",
     "s3ForcePathStyle": true
   },
-  "IMPORT_SENTENCES": false
+  "IMPORT_SENTENCES": false,
+  "AUTH0": {
+    "DOMAIN": "spectacled.auth0.com",
+    "CLIENT_ID": "lP0uXfI2AVATOh4DI7Pu9AuoDVKt63W6",
+    "CLIENT_SECRET": "OZHd28Ts9T6xtoUjYDAemqD_eywy1LGkZNWH6891tUd3_ekJuJUFwqo8gKWq7ahT"
+   }
 }
