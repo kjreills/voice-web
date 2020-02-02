@@ -794,6 +794,7 @@ profile-form-delete = Delete Profile
 ## Profile Download
 download-header = Need to download your data?
 download-subheader = Tell us what info you'd like to download:
+download-profile-description = Includes email, username & demographic info
 
 ## Landing
 welcome-staff = Welcome { $company } staff!

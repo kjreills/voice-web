@@ -9,6 +9,7 @@ import { User } from '../../../../stores/user';
 import StateTree from '../../../../stores/tree';
 import { UserClient } from 'common/user-clients';
 import './download.css';
+import { UserIcon } from '../../../ui/icons';
   
   interface PropsFromState {
     user: User.State;
@@ -52,21 +53,39 @@ import './download.css';
     render() {
       return (
           <div className="profile-download">
-              <div>
-                  <h2>
-                      <Localized id="download-header">
-                        <span />
-                      </Localized>
-                  </h2>
+                <div>
+                    <h2>
+                        <Localized id="download-header">
+                            <span />
+                        </Localized>
+                    </h2>
 
-                  <p>
-                      <Localized id="download-subheader">
-                          <span />
-                      </Localized>
-                  </p>
-              </div>
-              <hr className="hr"/>
+                    <p>
+                        <Localized id="download-subheader">
+                            <span />
+                        </Localized>
+                    </p>
+                </div>
+                <hr className="hr"/>
+                <div className="download-options">
+                    <div className="download-profile-info">
+                        <div>
+                            <UserIcon/>
+                                <Localized id="profile">
+                                    <p/>
+                                </Localized>
+                            
+                                <Localized id="download-profile-description">
+                                    <p/>
+                                </Localized>
+                        </div>
+                        
 
+                    </div>
+                    <div className="download-recordings">
+
+                    </div>
+                </div>
           </div>
       );
     }
