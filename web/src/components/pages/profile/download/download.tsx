@@ -9,8 +9,9 @@ import { User } from '../../../../stores/user';
 import StateTree from '../../../../stores/tree';
 import { UserClient } from 'common/user-clients';
 import './download.css';
-import { UserIcon } from '../../../ui/icons';
-import { LabeledCheckbox } from '../../../ui/ui';
+import { UserIcon, MicIcon } from '../../../ui/icons';
+import { LabeledCheckbox, LinkButton } from '../../../ui/ui';
+import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
   
   interface PropsFromState {
     user: User.State;
@@ -76,9 +77,23 @@ import { LabeledCheckbox } from '../../../ui/ui';
     }
     
     render() {
+        const nearBlack = '#4a4a4a';
         const {
-            profileSelected
+            profileSelected,
+            recordingsSelected
         } = this.state;
+
+        const { getString } = this.props;
+
+        const megabytes = 4;
+        const size =
+        megabytes < 1
+          ? Math.floor(megabytes * 100) / 100 + ' ' + getString('size-megabyte')
+          : megabytes > 1024
+          ? Math.floor(megabytes / 1024) + ' ' + getString('size-gigabyte')
+          : Math.floor(megabytes) + ' ' + getString('size-megabyte');
+  
+  
       return (
           <div className="profile-download">
                 <div>
@@ -113,9 +128,13 @@ import { LabeledCheckbox } from '../../../ui/ui';
                         </div>
                         <div>
                             <div className="bordered-cell">
-                                <Localized id="size">
+                                <Localized id="size" $size={size}>
                                     <span className="size"/>
                                 </Localized>
+                                <br/>
+                                <span className="size-value">
+                                    {size}
+                                </span>
                             </div>
                         </div>                        
                         <div>
@@ -128,16 +147,69 @@ import { LabeledCheckbox } from '../../../ui/ui';
                             </Localized>
                             }
                             name="profileSelected"
-                            checked={this.state.profileSelected}
+                            checked={profileSelected}
                             onChange={this.handleInputChange}
                             style={{ marginBottom: 40 }}
                         />
                         </div>
                     </div>
                     <div className="download-recordings">
-
+                        <div>
+                            <MicIcon color={ nearBlack } />
+                        </div>
+                        <div>
+                            <Localized id="recordings">
+                                <p/>
+                            </Localized>
+                        
+                            <Localized id="download-recordings-description">
+                                <small>
+                                    <p/>
+                                </small>
+                            </Localized>
+                        </div>
+                        <div>
+                            <div className="bordered-cell">
+                                <Localized id="size" $size={size}>
+                                    <span className="size"/>
+                                </Localized>
+                                <br/>
+                                <span className="size-value">
+                                    {size}
+                                </span>
+                            </div>
+                        </div>                        
+                        <div>
+                        <LabeledCheckbox
+                            label={
+                            <Localized id="selected">
+                                <b>
+                                    <span />
+                                </b>
+                            </Localized>
+                            }
+                            name="recordingsSelected"
+                            checked={recordingsSelected}
+                            onChange={this.handleInputChange}
+                            style={{ marginBottom: 40 }}
+                        />
+                        </div>
                     </div>
                 </div>
+                <hr className="hr"/>
+                <div className="start-download">
+                    <LinkButton
+                        href={ '#' }
+                    //   onClick={this.saveHasDownloaded}
+                        rounded
+                    >
+                        <Localized
+                            id="start-download"
+                            $size={ size }>
+                            <span />
+                        </Localized>
+                    </LinkButton>
+                </div>                
           </div>
       );
     }

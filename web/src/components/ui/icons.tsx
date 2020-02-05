@@ -535,7 +535,10 @@ export const MenuIcon = ({ className = '', ...props }: any) => (
   </svg>
 );
 
-export const MicIcon = uniqueIcon(id => (
+export const MicIcon = uniqueIcon((id, props) => {
+  const color = props.color || "#FF4F5E";
+
+  return (
   <svg width="29" height="28" viewBox="0 0 29 28">
     <defs>
       <path
@@ -547,12 +550,12 @@ export const MicIcon = uniqueIcon(id => (
       <mask id={'mic-mask' + id} fill="#fff">
         <use xlinkHref={'#mic-path' + id} />
       </mask>
-      <g fill="#FF4F5E" mask={`url(#mic-mask${id})`}>
+      <g fill={color} mask={`url(#mic-mask${id})`}>
         <path d="M-5 0h28v28H-5z" />
       </g>
     </g>
   </svg>
-));
+)});
 
 export const OldPlayIcon = (props: any) => (
   <svg viewBox="0 0 13 15" {...props}>
