@@ -354,9 +354,11 @@ faq-what-cv-a =
     
     Collectam mai que de mòstras de voses dins las lengas mai parladas mas tanben dins las lengas de populacion de locutors mai pichonas. La publicacion de divèrses jòcs de donadas permetrà als desvolopaires, entreprenaires, e a las comunitats d’emplenar aqueste deficit. En mai del jòc de donadas de Common Voice, sèm a bastir un motor de reconeissença de paraulas apelat Deep Speech.
 faq-why-important-q = Perqué es important ?
+faq-why-important-a = L‘oral es sovent lo biais mai natural qu’utilizam per comunicar entre nosautres, la tecnologia apòrta aqueste confòrt als ordenadors e periferics mobils. Volèm donar als desvolopaires los mejans de crear d’aplicacions de reconeissença vocala susprenentas, coma de traductors en temps real o d’assistents vocals a comanda vocala. Mas pel moment, la màger part de las donadas vocalas necessàrias a la creacion d’aqueste tipe d’aplicacion son costosas e proprietàrias. Esperam que lo jòc de donadas de Common Voice donarà als desvolopaires çò que cal per innovar e far venir la tecnologia de la paraula disponibla dins lor pròpria lenga.
 faq-how-get-q = Cossí pòdi obténer las donadas de Common Voice ?
 faq-how-get-a = Lo jòc de donadas de Common Voice es disponible al telecargament jos la licéncia <licenseLink>CC0</licenseLink> sus la <datasetLink>pagina de nòstres jòcs de donadas</datasetLink>. Podètz tanben telecargar mantun autres jòcs de donadas disponibles d’un biais public de la meteissa pagina estant.
 faq-when-release2-q = Quand publicaretz las donadas de Common Voince d’autras lengas ?
+faq-when-release2-a = La version multilingüa del jòc de donadas de Common Voice es a èsser recampat e netejat per la comunautat. Se volètz nos ajudar a ajustar una lenga novèla, consultatz <sentenceCollectorLink>l’aisina de collecta de frasas</sentenceCollectorLink> per ajustar de novèlas frasas al jòc de donadas e Mozilla <pontoonLink>Pontoon</pontoonLink> per traduire lo quite site Internet. Las nòvas lengas son ajustadas a Common Voice quand las contribucions de 5000 frasas validadas son reculhidas.
 faq-why-mission-q = Perque Common Voice es part de la mission de Mozilla ?
 faq-why-mission-a = La tòca de Mozilla es de gardar lo web dubèrt e accessible a totes. Per aquò far nos cal equipar los creators web amb de projèctes coma Common Voice. Las tecnologia vocalas son mai e mai presentas en defòra de las aplicacions, creem que devon servir a totes los utilizaires de la meteissa manièra. Vòl dire inclure mai de lengas, d’accents quand serem a construire e provar las tecnologias. Common Voice es una ressorça publica disponibla per tot lo monde e la còla de Mozilla e de desvolopaires del monde entièr l’utilizam ja per nòstres projèctes.
 faq-what-cv-and-deepspeech-q = Quina es la diferéncia entre Common Voice e Deep Speech ?
@@ -374,6 +376,7 @@ faq-what-quality-q = Quin nivèl de qualitat àudio deu aver una mòstra de votz
 faq-why-10k-hours-q = Perqué l’objectiu es de 10 000 oras validadas per lenga ?
 faq-why-10k-hours-a = Es lo nombre aproximatiu d’ora requesit per entrenar un sistèma de produccion de Paraula-al-tèxt.
 faq-how-calc-hours-q = Cossí Common Voice calcula las oras ?
+faq-how-calc-hours-a = Calculam las oras en estimant la durada mejana de cada enregistrament, puèi multiplicam aqueste nombre pel nombre total d’enregistraments de totas las lengas.
 faq-where-src-from-2-q = D’ont venon los tèxtes ?
 faq-where-src-from-2-a =
     Nòstre tèxt font es un mescladís de las donacions de contributors, tanben d’òbras del domeni public.
@@ -394,27 +397,42 @@ faq-search-for-answers =
 ## ABOUT US
 
 about-title = Perqué Common Voice ?
+about-subtitle = Common Voice fa part de l’initiativa de Mozilla per ajudar a aprendre a las maquinas cossí lo monde parla. En mai del jòc de donadas de Common Voice, construissèm un motor de reconeissença vocal liure apelat Deep Speech.
 how-does-it-work-title = Cossí fonciona ?
+how-does-it-work-text = Cridam a la participacion collectiva per constituir un jòc de donadas liure. Donatz vòstra votz, validatz la precision de las mòstras d’autras personas, melhoratz lo jòc de donadas per tot lo monde.
 about-speak = Parlar
 about-speak-text = Los contributors enregistran de mòstras de votz en legir de frasas d’una basa de frasas donadas.
 about-listen-queue = Fila d’escotat
+about-listen-queue-text = Las mòstras vocalas son enregistradas dins una fila d’espèra de mòstras preparadas a l’escota.
 about-listen = Escotar
+about-listen-text = Los utilizaires validan l’exactitud de las mòstras en verificant que los locutors legiscan corrèctament las frasas.
 about-is-it-valid = La mòstra es valida ?
 about-is-it-valid-text = Una mòstra a la marca « valida » quand un utilizaire l’apròva amb Òc.
 about-yes-votes = ≥ 2 vòtes Òc
 about-yes-votes-text = Per far partida del jòc de donadas Common Voice, una mòstra vocala deu èsser validada per doas personas distintas.
 about-no-votes = ≥ 2 vòtes NON
+about-no-votes-text = Quand un utilizaire regeta una mòstra aquela tòrna dins la fila. S’es regetada dos còps, la mòstra es desplaçada al cementèri de las mòstras.
 about-dataset-new = Jòc de donadas de Common Voice
+about-dataset-new-text = Lo jòc de donadas Common Voice conten centenas de mòstras vocalas per ajudar als desvolopaires a crear d’aplicacions vocalas.
 about-clip-graveyard = Cimentèri de mòstras
+about-clip-graveyard-text = Lo cementeri de mòstra inclutz de mòstras vocalas que son pas dintradas al jòc de donadas de Common Voice. Coma aqueste, òm pòt lo telecargar.
 about-partners = Sòcis
 about-become-a-partner = Venir sòci
 about-get-involved = Participar
+about-get-involved-text =
+    Volètz ajudar a melhorar Common Voice ?
+    Crane ! Contactatz-nos per mail o sus <discourseLink>Discourse</discourseLink>,
+    enviatz un comentari via <githubLink>GitHub</githubLink>,
+    o rejonhètz-nos sus <slackLink>Slack</slackLink>.
 about-nav-why-common-voice = Perque ?
 about-nav-how-it-works = Cossí ?
 about-nav-partners = Sòcis
 about-nav-get-involved = Participar
 mycroft-title = Mycroft Ai
 mycroft-subtitle = Intelligéncia artificiala
+mycroft-description =
+    Mycroft es lo primièr assistent liure del monde.
+    Mycroft fonciona pertot : sus un ordenador, dins una veitura o sus un Raspberry Pi.
 
 ## Glossary
 
@@ -424,6 +442,8 @@ localization-explanation = Aquò s’agís de nòstre processús de traduccion e
 sentence-collection = Collècta de frasas
 sentence-collection-explanation = Collectar de frasas del domeni public, o n’escriure de novèlas pel domeni public.
 hours-recorded-explanation = La quantitat d’oras d’enregistraments vocals qu’avèm collectats fins ara.
+sst = Reconeissença vocala (Speech-to-text, STT)
+sst-explanation = La reconeissença vocala (STT) convertís la votz en tèxt.
 de-identified = Anonimizar
 
 ## NotFound
@@ -440,6 +460,7 @@ data-download-license = Licéncia : <licenseLink>CC-0</licenseLink>
 data-download-modal = Sètz a man de telecargar un fichièr de <size>{ $size } Go</size>, volètz contunhar ?
 data-subtitle = Cream un jòc de donadas de voses dubert e public accessible, que tot lo monde pòt utilizar per entrenar d’aplicacions qu’utilizen la votz.
 data-explanatory-text = Pensam que d'importants jòcs de donadas publicament accessibles favorizan l'innovacion e participan a la mesa en plaça d'una concurréncia sana per las tecnologias vocalas qu'utilizan l'aprendissatge automatic. Es un esfòrç mondial e convidam tot lo monde a i prendre part. Nòstre objectiu es de far que la tecnologia de la votz siá mai inclusiva e que pòsca rebatre la diversitat de las voses del monde entièr.
+data-get-started = <speechBlogLink>Primièrs passes amb la reconeissença vocala</speechBlogLink>
 data-other-title = Autres jòcs de donadas…
 data-other-goto = Veire { $name }
 data-other-download = Telecargar las donadas
@@ -461,12 +482,19 @@ review-delete-recordings = Suprimir mos enregistraments
 
 ## Datasets Page
 
+datasets-headline = Sèm a crear un jòc de donadas vocalas liure que tot lo monde pòt utilizar per entrenar d’aplicacions utilizan la reconeissença vocala.
 language = Lenga
 # File size in gigabytes
 size = Talha
+validated-hr-total = Total d'oras validadas
+overall-hr-total = Total d'oras
 cv-license = Licéncia
 audio-format = Format àudio
 number-of-voices = Nombre de voses
+splits = Reparticion
+email-to-download = Picatz una adreça electronica per telecargar
+why-email = <b>Perqué un corrièl ?</b>Poiriá arribar qu’ajam de vos contactar tocant de modificacions sul jòc de donadas, vòstra adreça nos permetrà aquò.
+confirm-size = Sètz per aviar un telecargament de <b>{ $size }</b>
 size-gigabyte = Go
 size-megabyte = Mo
 confirm-no-identify = <b>Acceptatz</b> d’ensajar pas de determinar l’identitat dels locutors del jòc de donadas de Common Voice
@@ -474,10 +502,16 @@ download-language = Telecargar { $language }
 validated-hours = Oras validadas
 recorded-hours = Oras enregistradas
 whats-inside = Qu’es dins lo jòc de donadas de Common Voice ?
+want-dataset-update = Volètz recebre las actualitats de las nòvas versions de Common Voice ? Marcatz-vos a nòstra infoletra.
 subscribe = S’abonar
+get-started-speech = Introduccion a la reconeissença vocala
+other-datasets = Autres jòcs de donadas
 feedback-q = Avètz de suggestions ?
 data-other-ted-name = Corpus TED-LIUM
+data-other-voxforge-description = VoxForge foguèt bastit per reculhir de transcripcions vocala per las utilizar dins de motors de reconeissença vocala.
+your-feedback = Avètz d’idèas per melhorar lo jòc de donadas Common Voice ? Digatz-nos sus Discourse
 go-discourse = Anar al Discourse
+missing-language = Vòstra lenga es pas dins lo jòc de donadas ? Per demandar son apondon, anatz a la pagina de lengas.
 go-languages-page = Anar a la pagina de las lengas
 ready-to-validate = Prèst a nos ajudar a validar de frasas ?
 more = Mai
@@ -488,6 +522,7 @@ dataset-version = Version
 ## Download Modal
 
 download-title = Lo telecargament a començat
+download-helpus = Ajudatz-nos a construir una comunautat a l’entorn de las tecnologias de votz, demoratz al fial per corrièl.
 download-form-email =
     .label = Picatz vòstra adreça electronica
     .value = Mercés, vos tenem al fial.
@@ -601,6 +636,7 @@ validations =
 ## Dashboard
 
 your-languages = Vòstras lengas
+stats = Estatisticas
 awards = Premis
 you = Vos
 everyone = Tot lo monde
@@ -609,6 +645,7 @@ top-contributors = Los contributors mai gròsses
 recorded-clips = Mòstras enregistradas
 validated-clips = Mòstras validadas
 total-approved = Total aprovat
+overall-accuracy = Precision globala
 set-visibility = Definir ma visibilitat
 show-ranking = Veire mon classament
 
@@ -634,6 +671,7 @@ goal-interval-weekly = Setmanièr
 weekly-goal-created = Vòstre objectiu setmanièr es estat creat
 daily-goal-created = Vòstre objectiu quotidian es estat creat
 track-progress = Seguissètz vòstre progrès aquí e sus la pagina d’estatisticas.
+return-to-edit-goal = Tornatz aquí per modificar vòstre objectiu quand volgatz.
 share-goal = Partejar mos objectius
 
 ## Profile Delete
