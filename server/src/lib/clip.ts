@@ -80,6 +80,10 @@ export default class Clip {
     response.redirect(await this.bucket.getClipUrl(params.clip_id));
   };
 
+  getPersonalDatasetSize = async ({ client_id, params }: Request, response: Response) => {
+    
+  }
+
   saveClipVote = async (
     { client_id, body, params }: Request,
     response: Response

@@ -5,6 +5,8 @@ services:
     networks:
       - voice-web
     container_name: db
+    ports: 
+      - 5432:3306
     restart: unless-stopped
     environment:
       - MYSQL_DATABASE=voiceweb

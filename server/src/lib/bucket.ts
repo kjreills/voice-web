@@ -70,4 +70,26 @@ export default class Bucket {
     const clip = await this.model.db.findClip(id);
     return this.getPublicUrl(clip.path);
   }
+
+  async listClips(path: string): Promise<Array<S3.Object>> {
+    const bucket = getConfig().BUCKET_NAME;
+    const params = {
+      Bucket: bucket,
+      Delimiter: '/',
+      Prefix: path
+    };
+
+    const clips: S3.Object[] = [];
+    let response = await this.s3.listObjectsV2(params).promise();
+
+    clips.push(...response.Contents);
+
+    while (response.IsTruncated) {
+      response = await this.s3.listObjectsV2({ Bucket: bucket, ContinuationToken: response.NextContinuationToken }).promise();
+
+      clips.push(...response.Contents);
+    }
+
+    return clips;
+  }
 }
