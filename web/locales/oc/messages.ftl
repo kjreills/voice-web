@@ -23,6 +23,7 @@ not-available-abbreviation = Non disponible
 
 ab = Abcaz
 ace = Acehnese
+ady = Adyghe
 af = Afrikaans
 am = Amaric
 an = Aragonés
@@ -46,6 +47,7 @@ cy = Gallés
 da = Danés
 de = Alemand
 dsb = Sèrbe bas
+dv = Dhivehi
 el = Grèc
 en = Anglés
 eo = Esperanto
@@ -74,31 +76,45 @@ izh = Ingrian
 ja = Japonés
 ka = Georgian
 kab = Cabil
+kbd = Kabardian
 kk = Cazac
 ko = Corean
+kpv = Komi-Zyrian
 ku = Curd
 kw = Cornic
 ky = Quirguiz
+lg = Luganda
 lij = Ligur
 lt = Lituanian
 lv = Leton
+mdf = Moksha
 mg = Malgach
+mhr = Meadow Mari
 mk = Macedonian
 ml = Malayalam
 mn = Mongòl
+mrj = Hill Mari
 mt = Maltés
+my = Birman
+myv = Erzya
 nb-NO = Bokmål
 ne-NP = Nepali
 nl = Neerlandés
 nn-NO = Norvegian Nynorsk
 oc = Occitan
 or = Odia
+pa-IN = Punjabi
 pl = Polonés
 pt = Portugués
+rm-sursilv = Romanch sobreselvan
+rm-vallader = Romanch vallader
 ro = Romanés
 ru = Rus
+rw = Kinyarwanda
+sah = Sakha
 sc = Sarde
 scn = Sicilian
+si = Sinhala
 sk = Eslovac
 sl = Eslovèn
 sq = Albanés
@@ -108,9 +124,12 @@ sw = Swahili
 syr = Sirian
 ta = Tamil
 te = Telugu
+tg = Tajik
 th = Tai
 tr = Turc
 tt = Tatar
+uby = Ubykh
+udm = Udmurt
 uk = Ucraïnian
 ur = Ordo
 uz = Uzbec
@@ -445,6 +464,7 @@ hours-recorded-explanation = La quantitat d’oras d’enregistraments vocals qu
 sst = Reconeissença vocala (Speech-to-text, STT)
 sst-explanation = La reconeissença vocala (STT) convertís la votz en tèxt.
 de-identified = Anonimizar
+de-identified-explanation = Procès que permet que las informacions del perfil dels contributors sián pas ligadas a las mòstras de votz per la preparacion del jòc de donadas.
 
 ## NotFound
 
@@ -507,8 +527,12 @@ subscribe = S’abonar
 get-started-speech = Introduccion a la reconeissença vocala
 other-datasets = Autres jòcs de donadas
 feedback-q = Avètz de suggestions ?
+common-voice-info-new = Avètz de questions tocant Common Voice ? D’idèas de melhoraments o comentaris sus una lenga en particular ? Trapatz-nos sus nòstre <discourseLink>forum Discourse</discourseLink> e avisatz-nos.
+data-other-librispeech-description = LibriSpeech es un còpus de quicòm coma 1000 oras de lectura en anglés ( 16 Khz ) derivat de la lectura d’audiolibres del projècte LibriVox.
 data-other-ted-name = Corpus TED-LIUM
+data-other-ted-description = Lo còrpus TED-LIUM es bastit amb de dialogues e lor transcripcions disponiblas sul site TED.
 data-other-voxforge-description = VoxForge foguèt bastit per reculhir de transcripcions vocala per las utilizar dins de motors de reconeissença vocala.
+data-other-tatoeba-description = Tatoeba es una basa de donadas de frasas, traduccion e enregistraments d’àudio per dire d’aprendre de lengas. Aqueste telecargament conten d’enregistraments àudios en anglés enregistrats per la comunautat.
 your-feedback = Avètz d’idèas per melhorar lo jòc de donadas Common Voice ? Digatz-nos sus Discourse
 go-discourse = Anar al Discourse
 missing-language = Vòstra lenga es pas dins lo jòc de donadas ? Per demandar son apondon, anatz a la pagina de lengas.
@@ -544,13 +568,16 @@ request-language-title = Demanda de lenga
 request-language-form-language =
     .label = Lenga
 request-language-success-title = Proposicion de lenga enviada, mercés.
+request-language-success-content = Vos contactarem lèu lèu amb mai d’informacions sus la manièra d’ajustar vòstra lenga a Common Voice.
 select-language = Seleccionatz una lenga...
 other-language = Autra lenga
 
 ## Languages Overview
 
 language-section-in-progress = En cors
+language-section-in-progress-new-description = Aquestas lenga son actualament en desvolopament per la comunautat. Las barras de progression indican çò que manca per completar la fase de <localizationGlossaryLink>traduccion del site</localizationGlossaryLink> e <sentenceCollectionGlossaryLink>de collècta de frasas</sentenceCollectionGlossaryLink>.
 language-section-launched = Lançadas
+language-section-launched-description = Per aquestas lengas en produccion lo site web foguèt <localizationGlossaryLink>traduch</localizationGlossaryLink> complètament, e a pro de <sentenceCollectionGlossaryLink>frasas collectadas</sentenceCollectionGlossaryLink>per acceptar de contribucions <speakLink>oralas</speakLink> e <listenLink>d’escota</listenLink>.
 languages-show-more = Ne veire mai
 languages-show-less = Ne veire mens
 language-meter-in-progress = En cors
@@ -571,7 +598,11 @@ listen = Escotar
 skip = Passar
 shortcuts = Acorchis
 clips-with-count = <bold>{ $count }</bold> mòstras
+goal-help-recording = Gràcias a vos Common Voice a atengut <goalPercentage></goalPercentage> del seu objectiu quotidian de { $goalValue }{ $goalValue } enregistraments !
+goal-help-validation = Gràcias a vos Common Voice a atengut <goalPercentage></goalPercentage> del seu objectiu quotidian de { $goalValue }{ $goalValue } validacions !
+contribute-more = Prèst a ne far { $count } mai ?
 record-cta = Començar l’enregistrament
+record-platform-not-supported = O planhèm, mas vòstra plataforma es pas compatibla pel moment.
 record-platform-not-supported-desktop = Amb un ordenador de burèu, podètz telecargar lo darrièr :
 record-platform-not-supported-ios = Los utilizaires <bold>iOS</bold> pòdon telecargar nòstra aplicacion gratuita :
 record-must-allow-microphone = Devètz permetre l’accès al microfòn.
@@ -584,11 +615,19 @@ record-instruction = { $actionType }<recordIcon></recordIcon> puèi legissètz l
 record-stop-instruction = { $actionType }<stopIcon></stopIcon> un còp acabat
 record-three-more-instruction = Ne demòran pas que 3 !
 record-again-instruction = Crane !<recordIcon></recordIcon> Enregistratz una mòstra de mai
+record-again-instruction2 = Conutnatz atal, enregistratz un de mai <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon>La darrièra !
+review-tooltip = Verificatz e tornatz enregistrar aquí se cal
+review-instruction = Verificatz e tornatz enregistrar se cal
+record-submit-tooltip = { $actionType } enviar quand siatz prèst
 clips-uploaded = Mòstra enviada
+record-abort-title = Volètz acabar l’enregistrament d’en primièr ?
+record-abort-text = Se sortissètz ara, perdretz vòstra progression
 record-abort-submit = Enviar las mòstras
 record-abort-continue = Terminar l’enregistrament
 record-abort-delete = Quitar e suprimir mos enregistraments
+listen-instruction = { $actionType }<playIcon></playIcon> la frasa foguèt corrèctament prononciada ?
+listen-again-instruction = Polit trablah !<playIcon></playIcon>Escotatz de nòu quand siatz prèst
 listen-3rd-time-instruction = Encara 2, gardatz lo ritme !<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Lo darrièr !
 nothing-to-validate = Avèm pas res a validar dins aquesta lenga, ajudatz-nos a ajustar d’enregistraments dins la fila.
@@ -601,6 +640,7 @@ login-to-get-started = Connectatz-vos o marcatz-vos per començar
 
 report = Senhalar
 report-title = Enviar un rapòrt
+report-ask = Qual problèma avètz amb aquesta frasa ?
 report-offensive-language = Lengatge grossièr
 report-offensive-language-detail = La frasa compòrta de prepauses irrespectuoses o grossièrs.
 report-grammar-or-spelling = Error gramaticala / ortografica
@@ -608,7 +648,9 @@ report-grammar-or-spelling-detail = La frasa a una error gramaticala o una deca.
 report-different-language = Autra lenga
 report-different-language-detail = La frasa es escricha en una lenga diferenta de la que parli
 report-difficult-pronounce = De mal prononciar
+report-difficult-pronounce-detail = Content de paraulas o frasas que son de mal legir o prononciar.
 report-offensive-speech = Lengatge grossièr
+report-offensive-speech-detail = La mòstra conten de contengut irrespectuós o ofensiu.
 report-other-comment =
     .placeholder = Comentari
 success = Succès !
@@ -617,6 +659,7 @@ report-success = Lo rapòrt es estat mandat amb succès !
 
 ## Goals
 
+streaks = Serias
 days =
     { $count ->
         [one] Jorn
@@ -636,6 +679,11 @@ validations =
 ## Dashboard
 
 your-languages = Vòstras lengas
+toward-next-goal = Cap al seguent objectiu
+clips-you-recorded = Mòstras qu’enregistrèretz
+clips-you-validated = Mòstras que validèretz
+todays-recorded-progress = Progression d’uèi de Common Voice tocant las mòstras enregistradas
+todays-validated-progress = Progression d’uèi de Common Voice tocant las mòstras validadas
 stats = Estatisticas
 awards = Premis
 you = Vos
@@ -647,6 +695,7 @@ validated-clips = Mòstras validadas
 total-approved = Total aprovat
 overall-accuracy = Precision globala
 set-visibility = Definir ma visibilitat
+visibility-overlay-note = Nòta : quand es definit sus « Visible », aqueste paramètre pòt èsser cambiat de la pagina <profileLink>Perfil</profileLink> estant.
 show-ranking = Veire mon classament
 
 ## Custom Goals
@@ -661,13 +710,34 @@ easy-difficulty = Facil
 average-difficulty = Normal
 difficult-difficulty = Dificil
 pro-difficulty = Professional
+lose-goal-progress-warning = En modificar l’objectiu, podètz pèrdre lo progrès actual.
 want-to-continue = Volètz contunhar ?
+finish-editing = Volètz terminar las modificacions ?
+lose-changes-warning = Se sortissètz ara, perdretz vòstres cambiaments
 build-custom-goal = Crear un objectiu personalizat
+help-reach-hours = Ajudatz a arribar a { NUMBER($hours) } oras en { $language } amb un objectiu personal
+help-reach-hours-general = Ajudatz a arribar a { NUMBER($hours) } oras en una lenga amb un objectiu personal
 set-a-goal = Definir un objectiu
 cant-decide = Podètz pas decidir ?
+activity-needed-calculation = Se { NUMBER($people) } personas enregistran { NUMBER($clipsPerDay) } mòstras per jorn, se pòt arribar a { NUMBER($totalHours) } oras en un pauc mai de { NUMBER($periodMonths) } meses.
+how-many-per-day = Crane ! Quantas de mòstras per jorn ?
+how-many-a-week = Crane ! Quantas de mòstras per setmana ?
+which-goal-type = Volètz parlar, escotar, o los dos ?
+receiving-emails-info = Actualament avètz configurat per recebre de corrièls coma de recòrds d’objectius, de rapòrts de progression e las letras d’informacion de Common Voice.
+not-receiving-emails-info = Actualament recebètz <bold>PAS</bold> de corrièls coma de recòrds d’objectius, de rapòrts de progression e las letras d’informacion de Common Voice.
 n-clips = { NUMBER($count) } mòstras
+help-share-goal = Ajudatz-nos a trobar mai de voses, partejatz vòstre objectiu
 confirm-goal = Confirmar l’objectiu
 goal-interval-weekly = Setmanièr
+# $type is one of share-goal-type-*
+share-n-daily-contribution-goal = Partejatz vòstre objectiu quotidian de { $count } mòstras { $type }
+# $type is one of share-goal-type-*
+share-n-weekly-contribution-goal = Partejatz vòstre objectiu setmanal de { $count } mòstras { $type }
+share-goal-type-speak = parlant
+share-goal-type-listen = escotant
+share-goal-type-both = parlant e escotant
+# LINK will be replaced with the current URL
+goal-share-text = Veni de crear un objectiu personal pel don de votz a #CommonVoice - rejonhètz-me e ajudatz-me a aprendre a las maquinas a parlar coma de vertadièras personas { $link }
 weekly-goal-created = Vòstre objectiu setmanièr es estat creat
 daily-goal-created = Vòstre objectiu quotidian es estat creat
 track-progress = Seguissètz vòstre progrès aquí e sus la pagina d’estatisticas.
@@ -676,10 +746,15 @@ share-goal = Partejar mos objectius
 
 ## Profile Delete
 
+delete-q = Volètz tanben demandar la supression de vòstres enregistraments vocals o volètz los daissar al jòc de donadas de Common Voice ?
 keep = Gardar
 remove = Levar
 keep-info = Vòstres enregistraments vocals anonims demoraràn dins lo jòc de donadas Common Voice. Un còp qu'avètz suprimit vòstre perfil, poiretz pas mai enviar de requèsta per suprimir vòstres enregistraments del jòc de donadas.
 remove-info = Anam estudiar vòstra requèsta per tirar vòstres enregistraments vocals del jòc de donadas. Se vòstra demanda es acceptada, contactarem los qu'an telecargat lo jòc de donadas e lor demandarem d'o far tanben.
+why-delete-recordings =
+    Los universitaris, las entrepresas pichonas e los afogats de reconeissença vocala utilizan los enregistraments Common Voice per entrainar e desvolopar de ressorças accessiblas al public, coma de modèls vocals.
+    
+    Poiriatz-nos indicar per qué volètz suprimir vòstres enregistraments ?
 profile-form-delete = Suprimir lo perfil
 
 ## Landing
