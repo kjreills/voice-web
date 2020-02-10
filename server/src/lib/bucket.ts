@@ -71,12 +71,12 @@ export default class Bucket {
     return this.getPublicUrl(clip.path);
   }
 
-  async listClips(path: string): Promise<Array<S3.Object>> {
+  async listClips(client_id: string): Promise<Array<S3.Object>> {
     const bucket = getConfig().BUCKET_NAME;
     const params = {
       Bucket: bucket,
       Delimiter: '/',
-      Prefix: path
+      Prefix: client_id
     };
 
     const clips: S3.Object[] = [];

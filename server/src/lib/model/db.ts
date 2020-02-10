@@ -531,11 +531,11 @@ export default class DB {
     )[0][0];
   }
 
-  async getDistinctFolders(client_id: string) {
-    return (
-      await this.mysql.query('SELECT DISTINCT ')
-    )
-  }
+  // async getDistinctFolders(client_id: string) {
+  //   return (
+  //     await this.mysql.query('SELECT DISTINCT ')
+  //   )
+  // }
 
   async getRequestedLanguages(): Promise<string[]> {
     const [rows] = await this.mysql.query(
