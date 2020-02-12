@@ -86,6 +86,7 @@ export default class API {
     router.post('/user_client/avatar_clip', this.saveAvatarClip);
     router.get('/user_client/avatar_clip', this.getAvatarClip);
     router.get('/user_client/delete_avatar_clip', this.deleteAvatarClip);
+    router.get('/user_client/recordings/size', this.getPersonalDatasetSize);
     router.post('/user_client/:locale/goals', this.createCustomGoal);
     router.get('/user_client/goals', this.getGoals);
     router.get('/user_client/:locale/goals', this.getGoals);
@@ -348,6 +349,18 @@ export default class API {
     await UserClient.deleteAvatarClipURL(user.emails[0].value);
     response.json('deleted');
   };
+
+  getPersonalDatasetSize = async ({ client_id }: Request, response: Response) => {
+    console.log('Getting personal dataset size');
+
+    const clips = await this.bucket.listClips(client_id);
+
+    console.log(clips);
+    
+    const sizeInBytes = clips.reduce((sum, current) => sum + current.Size, 0);
+
+    response.json({ size: sizeInBytes });
+  }
 
   getContributionActivity = async (
     { client_id, params: { locale }, query }: Request,

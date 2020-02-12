@@ -11,21 +11,22 @@ import { UserClient } from 'common/user-clients';
 import './download.css';
 import { UserIcon, MicIcon } from '../../../ui/icons';
 import { LabeledCheckbox, LinkButton } from '../../../ui/ui';
-import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
+import API from '../../../../services/api';
   
   interface PropsFromState {
     user: User.State;
+    api: API;
   }
   
   interface Props extends LocalizationProps, PropsFromState {}
 
   type State = {
     profileSelected: boolean,
-    recordingsSelected: boolean
+    recordingsSelected: boolean,
+    recordingSize: number
   }
   
   class DownloadProfile extends React.Component<Props, State> {
-
 
     profileSelected: boolean = true;
     recordingsSelected:boolean = true;
@@ -35,7 +36,8 @@ import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
 
         this.state = {
             profileSelected: true,
-            recordingsSelected: true
+            recordingsSelected: true,
+            recordingSize: 0
         };
     }
 
@@ -44,6 +46,14 @@ import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
           [target.name]: target.type === 'checkbox' ? target.checked : target.value,
         } as any);
       };
+
+    async componentDidMount() {
+        const sizeResponse = await this.props.api.fetchTotalRecordingSize();
+
+        this.setState({
+            recordingSize: sizeResponse.size
+        });
+    }
 
     // may need to re-write
     downloadData(account: UserClient) {
@@ -80,18 +90,38 @@ import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
         const nearBlack = '#4a4a4a';
         const {
             profileSelected,
-            recordingsSelected
+            recordingsSelected,
+            recordingSize
         } = this.state;
 
         const { getString } = this.props;
 
-        const megabytes = 4;
-        const size =
-        megabytes < 1
-          ? Math.floor(megabytes * 100) / 100 + ' ' + getString('size-megabyte')
-          : megabytes > 1024
-          ? Math.floor(megabytes / 1024) + ' ' + getString('size-gigabyte')
-          : Math.floor(megabytes) + ' ' + getString('size-megabyte');
+        const kibibyte = 1024;
+        const mebibyte = kibibyte * kibibyte;
+        const gibibyte = mebibyte * kibibyte;
+        const bytes = recordingSize;
+        let size = '';
+
+        if (bytes < kibibyte) {
+            size = `< 1 ${getString('size-kilobyte')}`;
+        } else if (bytes < mebibyte) {
+            const kb = Math.floor(bytes / kibibyte);
+            size = `${kb} ${getString('size-kilobyte')}`;
+        } else if (bytes < gibibyte) {
+            const mb = Math.floor(bytes / mebibyte);
+            size = `${mb} ${getString('size-megabyte')}`;
+        } else {
+            const gb = Math.floor(bytes / gibibyte);
+            size = `${gb} ${getString('size-gigabyte')}`;
+        }
+
+        // const megabytes = 4;
+        // size =
+        // megabytes < 1
+        //   ? Math.floor(megabytes * 100) / 100 + ' ' + getString('size-megabyte')
+        //   : megabytes > 1024
+        //   ? Math.floor(megabytes / 1024) + ' ' + getString('size-gigabyte')
+        //   : Math.floor(megabytes) + ' ' + getString('size-megabyte');
   
   
       return (
@@ -205,7 +235,7 @@ import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
                     >
                         <Localized
                             id="start-download"
-                            $size={ size }>
+                            $size={ size.toLocaleLowerCase() }>
                             <span />
                         </Localized>
                     </LinkButton>
@@ -215,7 +245,7 @@ import { PrimaryButton } from '../../../primary-buttons/primary-buttons';
     }
   }
   
-  export default connect<PropsFromState>(({ user }: StateTree) => ({ user }))(
+  export default connect<PropsFromState>(({ user, api }: StateTree) => ({ user, api }))(
     withLocalization(DownloadProfile)
   );
   

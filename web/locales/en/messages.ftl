@@ -551,6 +551,7 @@ why-email = <b>Why an email?</b> We may need to contact you in the future about 
 confirm-size = You are prepared to initiate a download of <b>{ $size }</b>
 size-gigabyte = GB
 size-megabyte = MB
+size-kilobyte = KB
 confirm-no-identify = <b>You agree</b> to not attempt to determine the identity of speakers in the Common Voice dataset
 download-language = Download { $language }
 validated-hours = Validated Hours

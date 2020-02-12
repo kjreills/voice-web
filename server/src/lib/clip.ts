@@ -71,7 +71,6 @@ export default class Clip {
     router.get('/voices', this.serveVoicesStats);
     router.get('/votes/daily_count', this.serveDailyVotesCount);
     router.get('/:clip_id', this.serveClip);
-    router.get('/download/size', this.getPersonalDatasetSize);
     router.get('*', this.serveRandomClips);
 
     return router;
@@ -80,16 +79,6 @@ export default class Clip {
   serveClip = async ({ params }: Request, response: Response) => {
     response.redirect(await this.bucket.getClipUrl(params.clip_id));
   };
-
-  getPersonalDatasetSize = async ({ client_id }: Request, response: Response) => {
-    console.log('Getting personal dataset size');
-
-    const clips = await this.bucket.listClips(client_id);
-
-    const sizeInBytes = clips.reduce((sum, current) => sum + current.Size, 0);
-
-    response.json({ size: sizeInBytes });
-  }
 
   saveClipVote = async (
     { client_id, body, params }: Request,
