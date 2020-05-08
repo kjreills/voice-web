@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser';
 import { MD5 } from 'crypto-js';
 import { NextFunction, Request, Response, Router } from 'express';
 import * as sendRequest from 'request-promise-native';
-import { UserClient as UserClientType } from 'common/user-clients';
+import { UserClient as UserClientType } from 'common';
 import { authMiddleware } from '../auth-router';
 import { getConfig } from '../config-helper';
 import Awards from './model/awards';
@@ -55,10 +55,7 @@ export default class API {
       this.metrics.countPrometheusRequest(request);
 
       const { registry } = this.metrics;
-      response
-        .type(registry.contentType)
-        .status(200)
-        .end(registry.metrics());
+      response.type(registry.contentType).status(200).end(registry.metrics());
     });
 
     router.use((request: Request, response: Response, next: NextFunction) => {
@@ -312,10 +309,7 @@ export default class API {
           .upload({
             Bucket: getConfig().BUCKET_NAME,
             Key: clipFileName,
-            Body: transcoder
-              .audioCodec('mp3')
-              .format('mp3')
-              .stream(),
+            Body: transcoder.audioCodec('mp3').format('mp3').stream(),
           })
           .promise(),
       ]);
@@ -350,17 +344,20 @@ export default class API {
     response.json('deleted');
   };
 
-  getPersonalDatasetSize = async ({ client_id }: Request, response: Response) => {
+  getPersonalDatasetSize = async (
+    { client_id }: Request,
+    response: Response
+  ) => {
     console.log('Getting personal dataset size');
 
     const clips = await this.bucket.listClips(client_id);
 
     console.log(clips);
-    
+
     const sizeInBytes = clips.reduce((sum, current) => sum + current.Size, 0);
 
     response.json({ size: sizeInBytes });
-  }
+  };
 
   getContributionActivity = async (
     { client_id, params: { locale }, query }: Request,

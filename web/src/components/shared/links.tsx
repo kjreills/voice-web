@@ -18,6 +18,7 @@ export const GitHubLink = ({ dispatch, ...props }: SharedLinkProps) => {
     <a
       target="_blank"
       href="https://github.com/mozilla/voice-web"
+      rel="noopener noreferrer"
       onClick={() => trackGlobal('github', locale)}
       {...props}
     />
@@ -37,13 +38,13 @@ export const DiscourseLink = ({ dispatch, ...props }: SharedLinkProps) => {
   );
 };
 
-export const SlackLink = ({ dispatch, ...props }: SharedLinkProps) => {
+export const MatrixLink = ({ dispatch, ...props }: SharedLinkProps) => {
   const [locale] = useLocale();
   return (
     <a
       target="blank"
-      href="https://common-voice-slack-invite.herokuapp.com/"
-      onClick={() => trackGlobal('slack', locale)}
+      href="https://chat.mozilla.org/#/room/#common-voice:mozilla.org"
+      onClick={() => trackGlobal('matrix', locale)}
       {...props}
     />
   );

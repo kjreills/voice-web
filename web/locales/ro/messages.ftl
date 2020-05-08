@@ -68,6 +68,7 @@ hi-IN = Hindi
 hr = Croată
 hsb = Sorbenă de sus
 hu = Maghiară
+hy-AM = Armeană
 ia = Interlingua
 id = Indoneziană
 is = Islandeză
@@ -75,6 +76,7 @@ it = Italiană
 izh = Izoriană
 ja = Japoneză
 ka = Georgiană
+kaa = Karakalpak
 kab = Kabilă
 kbd = Karbadiană
 kk = Kazahă
@@ -126,6 +128,7 @@ ta = Tamilă
 te = Telugu
 tg = Tadjică
 th = Thailandeză
+tl = Tagalog
 tr = Turcă
 tt = Tătară
 uby = Ubykhă
@@ -133,6 +136,7 @@ udm = Udmurtă
 uk = Ucraineană
 ur = Urdu
 uz = Uzbecă
+vec = Venețiană
 vi = Vietnameză
 vot = Votică
 zh-CN = Chineză (China)
@@ -233,7 +237,7 @@ whats-public = Ce este public?
 email-not-public = Nu îți vom face publică adresa de e-mail.
 recordings-and-locale-public = Numărul de înregistrări și limbile în care vei contribui vor fi publice.
 username-optin-public = Poți alege să îți faci numele de utilizator public sau anonim.
-demographic-deidentified = Informațiile demografice trimise opțional (de ex., vârsta, sexul, limba și accentul) sunt anonimizate din datele voce trimise și nu vor fi niciodată făcute publice în profilul tău.
+demographic-deidentified-clarity = Datele demografice trimise opțional (de ex. vârsta, sexul, limba și accentul) nu vor fi făcute niciodată publice pe profilul tău și nu vor fi legate de contul tău în setul de date. Secvențele audio individuale vor fi asociate cu datele demografice în scopul unei analize mai precise - de exemplu, un cercetător ar putea dori să asocieze un model de instruire cu un anumit segment demografic.
 username-email-not-demographic = Numele de utilizator și adresa de e-mail nu vor fi asociate cu datele publicate.
 
 ## Speak & Listen Shortcuts
@@ -442,10 +446,11 @@ about-partners = Parteneri
 about-become-a-partner = Devino un partener
 about-partnership = Common Voice este un proiect de colaborare și depindem de comunitatea de parteneri și colaboratori ca să construim cel mai mare set de date vocale cu sursă deschisă. Am dori să mulțumim următoarelor persoane și organizații pentru ajutorul acordat în cadrul proiectului:
 about-get-involved = Implică-te
-about-get-involved-text =
+about-get-involved-text-2 =
     Vrei să ajuți la îmbunătățirea Common Voice?
-    Grozav! Ia legătura cu noi prin e-mail sau intră pe <discourseLink>Discourse</discourseLink>,
-    dă-ne feedback prin <githubLink>GitHub</githubLink> sau alătură-te pe <slackLink>Slack</slackLink>.
+    Grozav! Ia legătura prin e-mail sau pe FORUMURILE <discourseLink>Discourse</discourseLink>
+    trimite feedback prin <githubLink>GitHub</githubLink>
+    sau intră în chatul comunității <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = De ce?
 about-nav-how-it-works = Cum?
 about-nav-partners = Parteneri
@@ -532,7 +537,7 @@ confirm-no-identify = <b>Ești de acord</b> să nu încerci să determini identi
 download-language = Descarcă { $language }
 validated-hours = Ore validate
 recorded-hours = Ore înregistrate
-whats-inside = Ce se găsește în setul de date Common Voice?
+whats-inside = Ce conține setul de date Common Voice?
 dataset-description-hours =
     Fiecare intrare din setul de date constă dintr-un MP3 unic și fișierul text corespondent. Multe dintre cele <b>{ $total }</b> de ore înregistrate din setul de date includ și metadate demografice, precum vârstă, sex și accent, care ajută la antrenarea pentru acuratețe a motoarelor de recunoaștere vocală.
     
@@ -625,7 +630,7 @@ contribute-more =
 record-cta = Începe înregistrarea
 record-platform-not-supported = Ne pare rău, dar platforma ta nu este suportată momentan.
 record-platform-not-supported-desktop = Pe calculatoare tip desktop, poți descărca cele mai recente:
-record-platform-not-supported-ios = Utilizatorii <bold>iOS</bold> pot descărca aplicația noastră gratuită:
+record-platform-not-supported-ios-non-safari = Pe iOS, continuă cu Safari pentru activarea înregistrării…
 record-must-allow-microphone = Trebuie să permiți accesul la microfon.
 record-no-mic-found = Nu a fost găsit niciun microfon.
 record-error-too-short = Înregistrarea a fost prea scurtă.
@@ -639,6 +644,8 @@ record-again-instruction = Perfect!<recordIcon></recordIcon> Înregistrează urm
 record-again-instruction2 = Ține-o tot așa! Înregistrează din nou <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Ultima!
 review-tooltip = Aici revezi și reînregistrezi secvențe vocale din mers
+share-clip = Partajează videoclipul
+share-common-voice = Partajează Common Voice
 review-instruction = Revezi și reînregistrează secvențe vocale dacă este nevoie
 record-submit-tooltip = { $actionType } trimite când ești gata
 clips-uploaded = Secvențe vocale încărcate
@@ -651,7 +658,9 @@ listen-instruction = { $actionType }<playIcon></playIcon> a pronunțat corect pr
 listen-again-instruction = Ai lucrat bine!<playIcon></playIcon> Ascultă din nou când ești gata
 listen-3rd-time-instruction = Ai terminat 2. Ține-o tot așa!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Ultima!
-nothing-to-validate = Nu avem nimic de validat în această limbă. Ajută-ne să umplem acest gol.
+listen-empty-state = Nu mai avem clipuri de validat în această limbă...
+speak-empty-state = Nu mai avem propoziții de înregistrat în această limbă...
+speak-empty-state-cta = Contribuie cu propoziții
 record-button-label = Înregistrează-ți vocea
 share-title-new = <bold>Ajută-ne</bold> să găsim mai multe voci
 keep-track-profile = Urmărește-ți progresul cu ajutorul unui profil

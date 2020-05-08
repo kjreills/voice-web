@@ -1,11 +1,11 @@
-import { AllGoals, CustomGoalParams } from 'common/goals';
-import { LanguageStats } from 'common/language-stats';
-import { UserClient } from 'common/user-clients';
-import { WeeklyChallenge, Challenge, TeamChallenge } from 'common/challenge';
+import { AllGoals, CustomGoalParams } from 'common';
+import { LanguageStats } from 'common';
+import { UserClient } from 'common';
+import { WeeklyChallenge, Challenge, TeamChallenge } from 'common';
+import { Sentence } from 'common';
 import { Locale } from '../stores/locale';
 import { User } from '../stores/user';
 import { USER_KEY } from '../stores/root';
-import { Sentences } from '../stores/sentences';
 
 export interface Clip {
   id: string;
@@ -33,10 +33,7 @@ interface Vote extends Event {
 const API_PATH = location.origin + '/api/v1';
 
 const getChallenge = (user: User.State): string => {
-  return user &&
-    user.account &&
-    user.account.enrollment &&
-    user.account.enrollment.challenge
+  return user?.account?.enrollment?.challenge
     ? user.account.enrollment.challenge
     : null;
 };
@@ -109,7 +106,7 @@ export default class API {
     return this.getLocalePath() + '/clips';
   }
 
-  fetchRandomSentences(count: number = 1): Promise<Sentences.Sentence[]> {
+  fetchRandomSentences(count: number = 1): Promise<Sentence[]> {
     return this.fetch(`${this.getLocalePath()}/sentences?count=${count}`);
   }
 

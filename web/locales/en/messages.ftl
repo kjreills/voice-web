@@ -28,7 +28,7 @@ arn = Mapudungun
 as = Assamese
 ast = Asturian
 az = Azerbaijani
-ba = Bashkirs
+ba = Bashkir
 be = Belarusian
 bg = Bulgarian
 bn = Bengali
@@ -60,10 +60,11 @@ ga-IE = Irish
 gl = Galician
 ha = Hausa
 he = Hebrew
-hi-IN = Hindi
+hi = Hindi
 hr = Croatian
 hsb = Sorbian, Upper
 hu = Hungarian
+hy-AM = Armenian
 ia = Interlingua
 id = Indonesian
 is = Icelandic
@@ -71,6 +72,7 @@ it = Italian
 izh = Izhorian
 ja = Japanese
 ka = Georgian
+kaa = Karakalpak
 kab = Kabyle
 kbd = Kabardian
 kk = Kazakh
@@ -122,6 +124,7 @@ ta = Tamil
 te = Telugu
 tg = Tajik
 th = Thai
+tl = Tagalog
 tr = Turkish
 tt = Tatar
 uby = Ubykh
@@ -129,6 +132,7 @@ udm = Udmurt
 uk = Ukrainian
 ur = Urdu
 uz = Uzbek
+vec = Venetian
 vi = Vietnamese
 vot = Votic
 zh-CN = Chinese (China)
@@ -234,7 +238,7 @@ whats-public = What's Public?
 email-not-public = We will not make your email public.
 recordings-and-locale-public = The number of recordings and which languages you contribute to will be public.
 username-optin-public = You can choose to make your username public or anonymous.
-demographic-deidentified = Optionally submitted demographic data (e.g. age, sex, language, and accent) is de-identified from your submitted voice data and will never be made public on your profile.
+demographic-deidentified-clarity = Optionally submitted demographic data (e.g. age, sex, language, and accent) will never be made public on your profile, and will not be linked to your account in the dataset. Individual audio clips will be associated with demographic data for the purpose of more accurate analysis - for example, a researcher might want to target a training model to a specific demographic segment.
 username-email-not-demographic = Your username and email will not be associated with the published data.
 
 
@@ -467,10 +471,10 @@ about-partnership = Common Voice is a collaborative project, and we're depending
 
     We would like to thank the following people and organizations for their help with the project:
 about-get-involved = Get involved
-about-get-involved-text = Want to help make Common Voice even better?
-    Great! Get in touch via email or on <discourseLink>Discourse</discourseLink>,
-    submit feedback through <githubLink>GitHub</githubLink>,
-    or join us on <slackLink>Slack</slackLink>.
+about-get-involved-text-2 = Want to help make Common Voice even better?
+    Great! Get in touch via email or <discourseLink>Discourse</discourseLink>
+    forums, submit site issues via <githubLink>GitHub</githubLink>, or join the
+    <matrixLink>Matrix</matrixLink> community chat.
 
 about-nav-why-common-voice = Why ?
 about-nav-how-it-works = How ?
@@ -640,9 +644,9 @@ contribute-more =
        *[other] Ready to do { $count } more?
     }
 record-cta = Start recording
-record-platform-not-supported = We’re sorry, but your platform is not currently supported.
-record-platform-not-supported-desktop = On desktop computers, you can download the latest:
-record-platform-not-supported-ios = <bold>iOS</bold> users can download our free app:
+record-platform-not-supported = We’re sorry, your platform is not currently supported.
+record-platform-not-supported-desktop = On desktop devices you can contribute by downloading…
+record-platform-not-supported-ios-non-safari = On iOS please continue with Safari to enable recording…
 record-must-allow-microphone = You must allow microphone access.
 record-no-mic-found = No microphone found.
 record-error-too-short = The recording was too short.
@@ -656,6 +660,8 @@ record-again-instruction = Great!<recordIcon></recordIcon> Record your next clip
 record-again-instruction2 = Keep it up, record again <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Last one!
 review-tooltip = Review & re-record clips here as you go
+share-clip = Share your clip
+share-common-voice = Share Common Voice
 review-instruction = Review & re-record clips if needed
 record-submit-tooltip = { $actionType } submit when ready
 clips-uploaded = Clips Uploaded
@@ -668,11 +674,17 @@ listen-instruction = { $actionType }<playIcon></playIcon> did they accurately sp
 listen-again-instruction = Great work!<playIcon></playIcon> Listen again when you're ready
 listen-3rd-time-instruction = 2 down, keep it up!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Last one!
-nothing-to-validate = We don't have anything to validate in this language, help us fill the queue.
+listen-empty-state = We've run out of clips to validate in this language...
+speak-empty-state = We've run out of sentences to record in this language...
+speak-empty-state-cta = Contribute sentences
 record-button-label = Record your voice
 share-title-new = <bold>Help us</bold> find more voices
 keep-track-profile = Keep track of your progress with a profile
 login-to-get-started = Log in or sign up to get started
+target-segment-first-card = You’re contributing to our first target segment
+target-segment-first-banner = Help create Common Voice’s first target segment in { $locale }
+target-segment-add-voice = Add Your Voice
+target-segment-learn-more = Learn More
 
 ## Reporting
 report = Report

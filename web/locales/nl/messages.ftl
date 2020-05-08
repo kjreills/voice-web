@@ -68,6 +68,7 @@ hi-IN = Hindi
 hr = Kroatisch
 hsb = Oppersorbisch
 hu = Hongaars
+hy-AM = Armeens
 ia = Interlingua
 id = Indonesisch
 is = IJslands
@@ -75,6 +76,7 @@ it = Italiaans
 izh = Izjorisch
 ja = Japans
 ka = Georgisch
+kaa = Karakalpaks
 kab = Kabylisch
 kbd = Kabardisch
 kk = Kazachs
@@ -126,6 +128,7 @@ ta = Tamil
 te = Telugu
 tg = Tadzjieks
 th = Thai
+tl = Tagalog
 tr = Turks
 tt = Tataars
 uby = Oebychs
@@ -133,6 +136,7 @@ udm = Oedmoerts
 uk = Oekraïens
 ur = Urdu
 uz = Oezbeeks
+vec = Venetiaans
 vi = Vietnamees
 vot = Wotisch
 zh-CN = Chinees (China)
@@ -230,7 +234,7 @@ whats-public = Wat is openbaar?
 email-not-public = We maken uw e-mailadres niet openbaar.
 recordings-and-locale-public = Het aantal opnamen en de talen waaraan u bijdraagt zijn openbaar.
 username-optin-public = U kunt kiezen of uw gebruikersnaam openbaar of anoniem is.
-demographic-deidentified = Optioneel ingediende demografische gegevens (bv. leeftijd, geslacht, taal en accent) worden anoniem gemaakt ten opzichte van uw ingediende spraakgegevens en zullen nooit openbaar worden gemaakt op uw profiel.
+demographic-deidentified-clarity = Optioneel ingediende demografische gegevens (b.v. leeftijd, geslacht, taal en accent) worden nooit openbaar gemaakt op uw profiel en worden niet gekoppeld aan uw account in de gegevensset. Afzonderlijke geluidsopnamen worden gekoppeld aan demografische gegevens voor een nauwkeurigere analyse – een onderzoeker kan bijvoorbeeld een trainingsmodel op een specifiek demografisch segment richten.
 username-email-not-demographic = Uw gebruikersnaam en e-mailadres zullen niet met de gepubliceerde gegevens worden gekoppeld.
 
 ## Speak & Listen Shortcuts
@@ -446,11 +450,11 @@ about-partnership =
     
     We willen de volgende mensen en organisaties bedanken voor hun hulp bij het project:
 about-get-involved = Meedoen
-about-get-involved-text =
-    Wilt u Common Voice nog beter helpen maken?
-    Geweldig! Neem contact op via e-mail of op <discourseLink>Discourse</discourseLink>,
-    geef feedback via <githubLink>GitHub</githubLink>,
-    of doe mee op <slackLink>Slack </slackLink>.
+about-get-involved-text-2 =
+    Wilt u helpen Common Voice nog beter te maken?
+    Geweldig! Neem contact op via e-mail of <discourseLink>Discourse</discourseLink>-
+    forums, meld problemen met de website via <githubLink>GitHub</githubLink>, of doe
+    mee met de gemeenschapschat op <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Waarom?
 about-nav-how-it-works = Hoe?
 about-nav-partners = Partners
@@ -625,7 +629,7 @@ contribute-more = Klaar om er nog { $count } te doen?
 record-cta = Opname starten
 record-platform-not-supported = Sorry, maar uw platform wordt nog niet ondersteund.
 record-platform-not-supported-desktop = Op desktopcomputers kunt u de meest recente downloaden:
-record-platform-not-supported-ios = <bold>iOS</bold>-gebruikers kunnen onze gratis app downloaden:
+record-platform-not-supported-ios-non-safari = Ga op iOS door met Safari om opnemen in te schakelen…
 record-must-allow-microphone = U dient toegang tot uw microfoon te geven.
 record-no-mic-found = Geen microfoon gevonden.
 record-error-too-short = De opname was te kort.
@@ -639,6 +643,8 @@ record-again-instruction = Geweldig! <recordIcon></recordIcon> Neem uw volgende 
 record-again-instruction2 = Ga zo door, neem nog een keer op <recordIcon></recordIcon>
 record-last-instruction = <checkIcon></checkIcon> De laatste!
 review-tooltip = Beoordeel en neem nogmaals fragmenten op als u wilt
+share-clip = Uw opname delen
+share-common-voice = Common Voice delen
 review-instruction = Beoordeel fragmenten en neem ze zo nodig opnieuw op
 record-submit-tooltip = { $actionType } Indienen wanneer gereed
 clips-uploaded = Fragmenten geüpload
@@ -651,7 +657,9 @@ listen-instruction = { $actionType } <playIcon></playIcon> - is de zin duidelijk
 listen-again-instruction = Goed werk! <playIcon></playIcon> Luister opnieuw wanneer u klaar bent
 listen-3rd-time-instruction = 2 gedaan, ga zo door! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon> De laatste!
-nothing-to-validate = Er is niets in deze taal te valideren; help ons de rij te vullen.
+listen-empty-state = We hebben in deze taal geen te valideren fragmenten meer...
+speak-empty-state = We hebben in deze taal geen op te nemen zinnen meer...
+speak-empty-state-cta = Zinnen bijdragen
 record-button-label = Uw stem opnemen
 share-title-new = <bold>Help ons</bold> meer stemmen te vinden
 keep-track-profile = Houd uw voortgang bij met een profiel

@@ -1,7 +1,8 @@
 import { Localized } from 'fluent-react/compat';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { trackListening } from '../../../../services/tracker';
+import { Clip as ClipType } from 'common';
+import { trackListening, getTrackClass } from '../../../../services/tracker';
 import { Clips } from '../../../../stores/clips';
 import { Locale } from '../../../../stores/locale';
 import StateTree from '../../../../stores/tree';
@@ -34,7 +35,12 @@ const VoteButton = ({
   kind,
   ...props
 }: { kind: 'yes' | 'no' } & React.ButtonHTMLAttributes<any>) => (
-  <button type="button" className={['vote-button', kind].join(' ')} {...props}>
+  <button
+    type="button"
+    className={['vote-button', kind, getTrackClass('fs', `vote-${kind}`)].join(
+      ' '
+    )}
+    {...props}>
     {kind === 'yes' && <ThumbsUpIcon />}
     {kind === 'no' && <ThumbsDownIcon />}
     <Localized id={'vote-' + kind}>
@@ -45,7 +51,7 @@ const VoteButton = ({
 
 interface PropsFromState {
   api: API;
-  clips: Clips.Clip[];
+  clips: ClipType[];
   isLoading: boolean;
   locale: Locale.State;
   showFirstContributionToast: boolean;
@@ -63,7 +69,7 @@ interface PropsFromDispatch {
 interface Props extends PropsFromState, PropsFromDispatch {}
 
 interface State {
-  clips: (Clips.Clip & { isValid?: boolean })[];
+  clips: (ClipType & { isValid?: boolean })[];
   hasPlayed: boolean;
   hasPlayedSome: boolean;
   isPlaying: boolean;
@@ -240,7 +246,7 @@ class ListenPage extends React.Component<Props, State> {
     const clipIndex = this.getClipIndex();
     const activeClip = clips[clipIndex];
     return (
-      <React.Fragment>
+      <>
         <audio
           {...(activeClip && { src: activeClip.audioSrc })}
           preload="auto"
@@ -254,7 +260,7 @@ class ListenPage extends React.Component<Props, State> {
             (clips.length === 0 || !activeClip) && (
               <div className="empty-container">
                 <div className="error-card card-dimensions">
-                  <Localized id="nothing-to-validate">
+                  <Localized id="listen-empty-state">
                     <span />
                   </Localized>
                   <LinkButton
@@ -295,19 +301,23 @@ class ListenPage extends React.Component<Props, State> {
           onReset={this.reset}
           onSkip={this.handleSkip}
           primaryButtons={
-            <React.Fragment>
+            <>
               <VoteButton
                 kind="yes"
                 onClick={this.voteYes}
                 disabled={!hasPlayed}
               />
-              <PlayButton isPlaying={isPlaying} onClick={this.play} />
+              <PlayButton
+                isPlaying={isPlaying}
+                onClick={this.play}
+                trackClass="play-clip"
+              />
               <VoteButton
                 kind="no"
                 onClick={this.voteNo}
                 disabled={!hasPlayed && !hasPlayedSome}
               />
-            </React.Fragment>
+            </>
           }
           pills={clips.map(
             ({ isValid }, i) => (props: ContributionPillProps) => {
@@ -361,7 +371,7 @@ class ListenPage extends React.Component<Props, State> {
           ]}
           type="listen"
         />
-      </React.Fragment>
+      </>
     );
   }
 }

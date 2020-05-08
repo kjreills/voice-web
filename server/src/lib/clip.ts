@@ -13,17 +13,14 @@ import Bucket from './bucket';
 import { ClientParameterError } from './utility';
 import Awards from './model/awards';
 import { checkGoalsAfterContribution } from './model/goals';
-import { ChallengeToken } from 'common/challenge';
+import { ChallengeToken, challengeTokens } from 'common';
 
 const Transcoder = require('stream-transcoder');
 
 const SALT = '8hd3e8sddFSdfj';
 
 export const hash = (str: string) =>
-  crypto
-    .createHmac('sha256', SALT)
-    .update(str)
-    .digest('hex');
+  crypto.createHmac('sha256', SALT).update(str).digest('hex');
 
 /**
  * Clip - Responsibly for saving and serving clips.
@@ -92,27 +89,16 @@ export default class Clip {
       throw new ClientParameterError();
     }
 
+    const glob = clip.path.replace('.mp3', '');
+
     await this.model.db.saveVote(id, client_id, isValid);
     await Awards.checkProgress(client_id, { id: clip.locale_id });
-
-    const glob = clip.path.replace('.mp3', '');
-    const voteFile = glob + '-by-' + client_id + '.vote';
-
-    await this.s3
-      .putObject({
-        Bucket: getConfig().BUCKET_NAME,
-        Key: voteFile,
-        Body: isValid.toString(),
-      })
-      .promise();
-
-    console.log('clip vote written to s3', voteFile);
     await checkGoalsAfterContribution(client_id, { id: clip.locale_id });
     // move it to the last line and leave a trace here in case of serious performance issues
     // response.json(ret);
 
     Basket.sync(client_id).catch(e => console.error(e));
-    const ret = challenge
+    const ret = challengeTokens.includes(challenge)
       ? {
           glob: glob,
           showFirstContributionToast: await earnBonus('first_contribution', [
@@ -150,7 +136,6 @@ export default class Clip {
     const folder = client_id + '/';
     const filePrefix = hash(sentence);
     const clipFileName = folder + filePrefix + '.mp3';
-    const sentenceFileName = folder + filePrefix + '.txt';
 
     // if the folder does not exist, we create it
     try {
@@ -181,27 +166,15 @@ export default class Clip {
         transcoder = new Transcoder(request);
       }
 
-      await Promise.all([
-        this.s3
-          .upload({
-            Bucket: getConfig().BUCKET_NAME,
-            Key: clipFileName,
-            Body: transcoder
-              .audioCodec('mp3')
-              .format('mp3')
-              .stream(),
-          })
-          .promise(),
-        this.s3
-          .putObject({
-            Bucket: getConfig().BUCKET_NAME,
-            Key: sentenceFileName,
-            Body: sentence,
-          })
-          .promise(),
-      ]);
+      await this.s3
+        .upload({
+          Bucket: getConfig().BUCKET_NAME,
+          Key: clipFileName,
+          Body: transcoder.audioCodec('mp3').format('mp3').stream(),
+        })
+        .promise();
 
-      console.log('file written to s3', clipFileName);
+      console.log('clip written to s3', clipFileName);
 
       await this.model.saveClip({
         client_id: client_id,
@@ -218,7 +191,7 @@ export default class Clip {
       Basket.sync(client_id).catch(e => console.error(e));
 
       const challenge = headers.challenge as ChallengeToken;
-      const ret = challenge
+      const ret = challengeTokens.includes(challenge)
         ? {
             filePrefix: filePrefix,
             showFirstContributionToast: await earnBonus('first_contribution', [

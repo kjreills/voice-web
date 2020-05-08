@@ -39,13 +39,13 @@ const Options = withLocalization(
   }: {
     children: { [key: string]: string };
   } & LocalizationProps) => (
-    <React.Fragment>
+    <>
       {Object.entries(children).map(([key, value]) => (
         <option key={key} value={key}>
           {getString(key, null, value)}
         </option>
       ))}
-    </React.Fragment>
+    </>
   )
 );
 
@@ -54,7 +54,7 @@ type Locales = { locale: string; accent: string }[];
 function ProfilePage({
   getString,
   history,
-}: LocalizationProps & RouteComponentProps<any>) {
+}: LocalizationProps & RouteComponentProps<any, any, any>) {
   const api = useAPI();
   const [locale, toLocaleRoute] = useLocale();
   const user = useTypedSelector(({ user }) => user);
@@ -110,7 +110,7 @@ function ProfilePage({
 
     setUserFields({
       ...userFields,
-      sendEmails: !!(account && account.basket_token),
+      sendEmails: !!account?.basket_token,
       visible: 0,
       ...pick(user, 'age', 'username', 'gender'),
       ...(account
@@ -173,7 +173,7 @@ function ProfilePage({
     addUploads([
       async () => {
         await saveAccount(data);
-        if (!(user.account && user.account.basket_token) && sendEmails) {
+        if (!user.account?.basket_token && sendEmails) {
           await api.subscribeToNewsletter(user.userClients[0].email);
         }
 
@@ -337,8 +337,8 @@ function ProfilePage({
 
       <Hr />
 
-      {!(user.account && user.account.basket_token) && (
-        <React.Fragment>
+      {!user.account?.basket_token && (
+        <>
           <div className="signup-section">
             <Tooltip
               arrow
@@ -401,7 +401,7 @@ function ProfilePage({
           </div>
 
           <Hr />
-        </React.Fragment>
+        </>
       )}
 
       <Localized id="profile-form-submit-save">

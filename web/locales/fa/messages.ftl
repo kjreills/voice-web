@@ -75,6 +75,7 @@ it = ایتالیایی
 izh = ایژوریایی
 ja = ژاپنی
 ka = گرجی
+kaa = کاراکالپاک
 kab = Kabyle
 kbd = کاباردیان
 kk = قزاقی
@@ -126,6 +127,7 @@ ta = تامیلی
 te = Telugu
 tg = تاجیکی
 th = تایلندی
+tl = تاگالوگ
 tr = ترکی
 tt = تاتاری
 uby = اوبیخی
@@ -133,6 +135,7 @@ udm = اودمورت
 uk = اوکراینی
 ur = اردو
 uz = ازبکی
+vec = ونتیایی
 vi = ویتنامی
 vot = ووتی
 zh-CN = چینی (چین)
@@ -449,11 +452,11 @@ about-partnership =
     
     ما از افراد و سازمان‌های زیر برای کمک به این پروژه تشکر می‌کنیم:
 about-get-involved = مشارکت کنید
-about-get-involved-text =
+about-get-involved-text-2 =
     می‌خواهید به بهترشدن آواهای مشترک کمک کنید؟
     عالی است! با ما در پست الکترونیکی یا <discourseLink>Discource</discourseLink> تماس بگیرید،
     بازخورد را از طریق <githubLink>گیت‌هاب</githubLink> ثبت کنید،
-    یا به ما در <slackLink>Slack</slackLink> ملحق شوید.
+    یا به ما در <matrixLink>ماتریکس</matrixLink> ملحق شوید.
 about-nav-why-common-voice = چرا ؟
 about-nav-how-it-works = چگونه ؟
 about-nav-partners = همکاران
@@ -646,6 +649,8 @@ record-again-instruction = عالیست!<recordIcon></recordIcon>کلیپ بعد
 record-again-instruction2 = ادامه دهید، دوباره ضبط کنید <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon>آخرین!
 review-tooltip = کلیپ‌ها را در اینجا مرور و دوباره ضبط کنید
+share-clip = کلیپ خود را به اشتراک بگذارید
+share-common-voice = همرسانی آواهای مشترک
 review-instruction = در صورت لزوم، کلیپ‌ها را بازبینی و دوباره ضبط کنید
 record-submit-tooltip = { $actionType } هنگامی که آماده بودید ارسال کنید
 clips-uploaded = کلیپ‌ها بارگذاری شدند
@@ -658,7 +663,9 @@ listen-instruction = { $actionType }<playIcon></playIcon> آیا دقیقا ای
 listen-again-instruction = بسیار عالی! <playIcon></playIcon> وقتی آماده بودید دوباره گوش کنید
 listen-3rd-time-instruction = ۲ تا انجام شد، ادامه دهید!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>آخرین!
-nothing-to-validate = چیزی برای اعتبارسنجی در این زبان نداریم، به ما کمک کنید صف را پر کنیم.
+listen-empty-state = ما برای تصدیق این زبان نیاز به کلیپ بیشتری داریم ...
+speak-empty-state = ما برای ضبط این زبان جمله کم آوردیم ...
+speak-empty-state-cta = با اهدا جمله مشارکت کنید
 record-button-label = صدای خود را ضبط کنید
 share-title-new = برای یافتن صداهای بیشتر <bold>به ما کمک کنید</bold>
 keep-track-profile = پیشرفت‌ خود را با یک نمایه پیگیری کنید

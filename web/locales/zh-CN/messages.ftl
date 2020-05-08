@@ -68,6 +68,7 @@ hi-IN = 印地语
 hr = 克罗地亚语
 hsb = 上索布语
 hu = 匈牙利语
+hy-AM = 亚美尼亚语
 ia = 国际语
 id = 印度尼西亚语
 is = 冰岛语
@@ -75,6 +76,7 @@ it = 意大利语
 izh = 英格里亚语
 ja = 日语
 ka = 格鲁吉亚语
+kaa = 卡拉卡尔帕克语
 kab = 卡拜尔语
 kbd = 卡巴尔达语
 kk = 哈萨克语
@@ -126,6 +128,7 @@ ta = 泰米尔语
 te = 泰卢固语
 tg = 塔吉克语
 th = 泰语
+tl = 塔加洛语
 tr = 土耳其语
 tt = 鞑靼语
 uby = 尤比克语
@@ -133,6 +136,7 @@ udm = 乌德穆尔特语
 uk = 乌克兰语
 ur = 乌尔都语
 uz = 乌兹别克语
+vec = 威尼斯语
 vi = 越南语
 vot = 沃提克语
 zh-CN = 汉语（中国大陆）
@@ -227,7 +231,7 @@ whats-public = 有哪些资料会公开？
 email-not-public = 我们不会公开您的邮件地址。
 recordings-and-locale-public = 您贡献的录音数量，以及贡献的语言将会是公开的。
 username-optin-public = 您可以选择公开用户名或保持匿名。
-demographic-deidentified = 非必要提交的人口统计数据（例如年龄、性别、语言、口音）将会在您提交的语音数据中进行去识别化，并且永远不会在您的个人资料中公开。
+demographic-deidentified-clarity = 可选提交的人口统计数据（例如年龄、性别、语言、口音）不会在您的个人资料上公开，也不会在数据集里与您的账户关联。每个音频片段只会为了能做更精准的分析，而与您的人口统计数据关联。比如，研究者可能想要针对特定人群而细分化训练模型。
 username-email-not-demographic = 您的用户名与邮件地址不会与发布的数据相关联。
 
 ## Speak & Listen Shortcuts
@@ -439,11 +443,11 @@ about-partnership =
     
     我们要感谢以下人员和组织对项目的帮助：
 about-get-involved = 参与进来
-about-get-involved-text =
+about-get-involved-text-2 =
     想要帮忙使 Common Voice 变得更好吗？
-    太好了！请发送电子邮件与我们联系，也可以到 <discourseLink>Discourse</discourseLink> 留言、
-    通过 <githubLink>GitHub</githubLink> 提交反馈意见、
-    也可以加入我们的 <slackLink>Slack</slackLink>。
+    太好了！请发送电子邮件与我们联系，也可以到 <discourseLink>Discourse</discourseLink> 论坛留言、
+    通过 <githubLink>GitHub</githubLink> 反馈网站问题、
+    也可以加入我们的 <matrixLink>Matrix</matrixLink> 社区群组。
 about-nav-why-common-voice = 为什么？
 about-nav-how-it-works = 怎么做？
 about-nav-partners = 合作伙伴
@@ -521,7 +525,7 @@ number-of-voices = 录音人数
 splits = 分割
 email-to-download = 输入电子邮件地址进行下载
 why-email = <b>为什么需要电子邮件地址?</b>未来我们可能会联系您，提供数据集的相关更新信息。 邮件地址可作为我们联系您的方式。
-confirm-size = 您将下载 <size>{ $size }GB</size> 的文件
+confirm-size = 您将下载 <b>{ $size }</b> 的文件
 size-gigabyte = GB
 size-megabyte = MB
 confirm-no-identify = <b>您同意</b>不试图去确定 Common Voice 数据集中任何说话者的身份
@@ -616,7 +620,7 @@ contribute-more = 准备好再来 { $count } 条了吗？
 record-cta = 开始录音
 record-platform-not-supported = 很抱歉，尚不支持您的平台。
 record-platform-not-supported-desktop = 您可以在桌面电脑上下载最新内容：
-record-platform-not-supported-ios = <bold>iOS</bold> 用户可以下载我们的免费应用程序：
+record-platform-not-supported-ios-non-safari = iOS 用户，请使用 Safari 以继续录制…
 record-must-allow-microphone = 您必须允许访问麦克风。
 record-no-mic-found = 未找到麦克风
 record-error-too-short = 这份录音太短了。
@@ -630,6 +634,8 @@ record-again-instruction = 太棒了！<recordIcon></recordIcon> 来录制下一
 record-again-instruction2 = 继续加油，再录一次 <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> 最后一个！
 review-tooltip = 在此确认或重新录制片段
+share-clip = 分享您的录音片段
+share-common-voice = 分享 Common Voice
 review-instruction = 确认录音内容，有需要的话可以重录
 record-submit-tooltip = { $actionType } 确认无误即可提交
 clips-uploaded = 片段已上传
@@ -642,7 +648,9 @@ listen-instruction = { $actionType }<playIcon></playIcon> 他们是否准确地�
 listen-again-instruction = 做得好！<playIcon></playIcon> 准备好就可以再听一遍
 listen-3rd-time-instruction = 完成两条了 <playIcon></playIcon>，继续加油！
 listen-last-time-instruction = <playIcon></playIcon> 最后一个了！
-nothing-to-validate = 我们没有这个语言可供验证的录音，请帮助我们多录一些。
+listen-empty-state = 我们已经没有这种语言的片段可以验证了…
+speak-empty-state = 我们已经没有这种语言的文本可以录音了…
+speak-empty-state-cta = 贡献语句
 record-button-label = 录下您的声音
 share-title-new = <bold>请帮助我们</bold>找到更多声音
 keep-track-profile = 创建账户跟踪个人贡献进度

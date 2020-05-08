@@ -64,10 +64,12 @@ ga-IE = Irländska
 gl = Galiciska
 ha = Hausa
 he = Hebreiska
+hi = Hindi
 hi-IN = Hindi
 hr = Kroatiska
 hsb = Högsorbiska
 hu = Ungerska
+hy-AM = Armeniska
 ia = Interlingua
 id = Indonesiska
 is = Isländska
@@ -75,6 +77,7 @@ it = Italienska
 izh = Ingriska
 ja = Japanska
 ka = Georgiska
+kaa = Karakalpakiska
 kab = Kabyliska
 kbd = Kabardinska
 kk = Kazakstanska
@@ -126,6 +129,7 @@ ta = Tamilska
 te = Telugu
 tg = Tadzjikiska
 th = Thailändska
+tl = Tagalog
 tr = Turkiska
 tt = Tatariska
 uby = Ubychiska
@@ -133,6 +137,7 @@ udm = Udmurtiska
 uk = Ukrainska
 ur = Urdu
 uz = Uzbekistanska
+vec = Venetianska
 vi = Vietnamesiska
 vot = Votiska
 zh-CN = Kinesiska (Kina)
@@ -233,7 +238,7 @@ whats-public = Vad är offentligt?
 email-not-public = Vi kommer inte göra din e-post offentlig.
 recordings-and-locale-public = Antalet inspelningar och vilka språk du bidrar till kommer att vara offentligt.
 username-optin-public = Du kan välja att göra ditt användarnamn offentligt eller anonymt.
-demographic-deidentified = Om du valt att skicka demografisk data (t.ex. ålder, kön, och språk) anonymiseras den från dina inskickade röstdata och kommer aldrig bli publik på din profil.
+demographic-deidentified-clarity = Valfritt inskickade demografiska data (t.ex. ålder, kön, språk och accent) kommer aldrig att offentliggöras i din profil och kommer inte att länkas till ditt konto i datamängden. Enskilda ljudklipp kommer att associeras med demografiska data i syfte att göra en mer exakt analys - till exempel kan en forskare inrikta sig på en träningsmodell till ett specifikt demografiskt segment.
 username-email-not-demographic = Ditt användarnamn och e-post kommer inte att kopplas till den publicerade datan.
 
 ## Speak & Listen Shortcuts
@@ -449,11 +454,11 @@ about-partnership =
     
     Vi vill tacka följande personer och organisationer för deras hjälp med projektet:
 about-get-involved = Engagera dig
-about-get-involved-text =
-    Vill du hjälpa till att göra Common Voice ännu bättre?
-    Bra! Ta kontakt via e-post eller på <discourseLink>Discourse</discourseLink>,
-    skicka in återkoppling via <githubLink>GitHub</ githubLink>,
-    eller gå med oss på <slackLink>Slack</slackLink>.
+about-get-involved-text-2 =
+    Vill du göra Common Voice ännu bättre?
+    Bra! Ta kontakt via e-post eller <discourseLink>Discourse</discourseLink>
+    forum, skicka webbplatsfrågor via <githubLink>GitHub</githubLink> eller gå med i
+    <matrixLink>Matrix</matrixLink> communitychatt.
 about-nav-why-common-voice = Varför ?
 about-nav-how-it-works = Hur ?
 about-nav-partners = Partners
@@ -632,7 +637,7 @@ contribute-more =
 record-cta = Starta inspelning
 record-platform-not-supported = Vi är ledsna, min din plattform stöds inte för tillfället.
 record-platform-not-supported-desktop = På datorer, kan du ladda ner senaste:
-record-platform-not-supported-ios = Användare av <bold>iOS</bold> kan ladda ner våran gratisapp:
+record-platform-not-supported-ios-non-safari = På iOS fortsätt med Safari för att aktivera inspelning…
 record-must-allow-microphone = Du måste tillåta mikrofon åtkomst.
 record-no-mic-found = Ingen mikrofon kunde hittas.
 record-error-too-short = Inspelningen var för kort.
@@ -646,6 +651,8 @@ record-again-instruction = Bra! <recordIcon></recordIcon> Spela in ditt nästa k
 record-again-instruction2 = Bra jobbat, spela in igen <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Sista!
 review-tooltip = Här kan du kontrollera och återuppta inspelningar
+share-clip = Dela ditt klipp
+share-common-voice = Dela Common Voice
 review-instruction = Om det behövs kan du granska och återuppta inspelningar
 record-submit-tooltip = { $actionType } skicka in när du är redo
 clips-uploaded = Klipp uppladdade
@@ -658,7 +665,9 @@ listen-instruction = { $actionType }<playIcon></playIcon> var meningen uttalad k
 listen-again-instruction = Bra jobbat!<playIcon></playIcon> Lyssna igen när du är redo
 listen-3rd-time-instruction = Två färdiga, <playIcon></playIcon> bra jobbat!
 listen-last-time-instruction = <playIcon></playIcon> Sista!
-nothing-to-validate = Vi har inget att validera på det här språket, hjälp oss att fylla kön.
+listen-empty-state = Vi har slut på klipp för att validera på det här språket...
+speak-empty-state = Vi har slut på meningar att spela in på det här språket...
+speak-empty-state-cta = Bidra med meningar
 record-button-label = Spela in din röst
 share-title-new = <bold>Hjälp oss</bold> hitta mer röster
 keep-track-profile = Håll koll på dina framsteg med en profil

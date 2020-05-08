@@ -10,10 +10,12 @@ import { Flags } from '../../../stores/flags';
 import { Locale } from '../../../stores/locale';
 import StateTree from '../../../stores/tree';
 import { User } from '../../../stores/user';
+import { Sentence } from 'common';
 import {
   trackListening,
   trackProfile,
   trackRecording,
+  getTrackClass,
 } from '../../../services/tracker';
 import URLS from '../../../urls';
 import { LocaleLink, LocaleNavLink, useLocale } from '../../locale-helpers';
@@ -171,7 +173,7 @@ class ContributionPage extends React.Component<Props, State> {
       isPlaying ? this.wave.play() : this.wave.idle();
     }
 
-    if (isSubmitted && user.account && user.account.skip_submission_feedback) {
+    if (isSubmitted && user.account?.skip_submission_feedback) {
       onReset();
     }
   }
@@ -345,10 +347,16 @@ class ContributionPage extends React.Component<Props, State> {
 
             <div className="links">
               <Localized id="speak">
-                <LocaleNavLink to={URLS.SPEAK} />
+                <LocaleNavLink
+                  className={getTrackClass('fs', `toggle-speak`)}
+                  to={URLS.SPEAK}
+                />
               </Localized>
               <Localized id="listen">
-                <LocaleNavLink to={URLS.LISTEN} />
+                <LocaleNavLink
+                  className={getTrackClass('fs', `toggle-listen`)}
+                  to={URLS.LISTEN}
+                />
               </Localized>
             </div>
 
@@ -366,9 +374,11 @@ class ContributionPage extends React.Component<Props, State> {
               <div />
             )}
             {isSubmitted && (
-              <button className="open-share" onClick={this.toggleShareModal}>
-                <ShareIcon />
-              </button>
+              <Tooltip arrow title={getString('share-common-voice')}>
+                <button className="open-share" onClick={this.toggleShareModal}>
+                  <ShareIcon />
+                </button>
+              </Tooltip>
             )}
           </div>
 
@@ -408,7 +418,7 @@ class ContributionPage extends React.Component<Props, State> {
     ) : (
       errorContent ||
         (this.isLoaded && (
-          <React.Fragment>
+          <>
             <div className="cards-and-pills">
               <div />
 
@@ -433,9 +443,11 @@ class ContributionPage extends React.Component<Props, State> {
                         style={{
                           transform: [
                             `scale(${isActive ? 1 : 0.9})`,
-                            `translateX(${(document.dir == 'rtl' ? -1 : 1) *
+                            `translateX(${
+                              (document.dir == 'rtl' ? -1 : 1) *
                               (i - activeSentenceIndex) *
-                              -130}%)`,
+                              -130
+                            }%)`,
                           ].join(' '),
                           opacity: i < activeSentenceIndex ? 0 : 1,
                         }}>
@@ -522,7 +534,11 @@ class ContributionPage extends React.Component<Props, State> {
                 <Button
                   rounded
                   outline
-                  className="skip"
+                  className={[
+                    'skip',
+                    getTrackClass('fs', `skip-${type}`),
+                    'fs-ignore-rage-clicks',
+                  ].join(' ')}
                   disabled={!this.isLoaded}
                   onClick={onSkip}>
                   <Localized id="skip">
@@ -540,7 +556,10 @@ class ContributionPage extends React.Component<Props, State> {
                     })}>
                     <Localized id="submit-form-action">
                       <PrimaryButton
-                        className="submit"
+                        className={[
+                          'submit',
+                          getTrackClass('fs', `submit-${type}`),
+                        ].join(' ')}
                         disabled={!this.isDone}
                         onClick={onSubmit}
                         type="submit"
@@ -550,7 +569,7 @@ class ContributionPage extends React.Component<Props, State> {
                 )}
               </div>
             </div>
-          </React.Fragment>
+          </>
         ))
     );
   }

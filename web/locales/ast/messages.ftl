@@ -51,7 +51,7 @@ dv = Maldivu
 el = Griegu
 en = Inglés
 eo = Esperantu
-es = Español
+es = Castellán
 et = Estoniu
 eu = Vascu
 fa = Persa
@@ -75,13 +75,16 @@ it = Italianu
 izh = Ingriu
 ja = Xaponés
 ka = Xeorxanu
+kaa = Karakalpakia
 kab = Cabilu
+kbd = Cabardianu
 kk = Kazaxu
 ko = Coreanu
 kpv = Komi
 ku = Kurdu
 kw = Córnicu
 ky = Kirguís
+lg = Luganda
 lij = Ligur
 lt = Lituanu
 lv = Letón
@@ -93,6 +96,7 @@ ml = Malayalam
 mn = Mongol
 mrj = Mari de les Llombes
 mt = Maltés
+my = Birmanu
 myv = Erzya
 nb-NO = Bokmål noruegu
 ne-NP = Nepalín
@@ -110,6 +114,7 @@ ru = Rusu
 rw = Kiñaruanda
 sah = Sakha
 sc = Sardu
+scn = Sicilianu
 si = Cingalés
 sk = Eslovacu
 sl = Eslovenu
@@ -122,6 +127,7 @@ ta = Tamil
 te = Telugu
 tg = Taxiku
 th = Tailandés
+tl = Tagalu
 tr = Turcu
 tt = Tatar
 uby = Ubix
@@ -129,6 +135,7 @@ udm = Udmurtu
 uk = Ucraín
 ur = Urdu
 uz = Uzbecu
+vec = Venecianu
 vi = Vietnamita
 vot = Vóticu
 zh-CN = Chinu (China)
@@ -186,7 +193,7 @@ wall-of-text-second =
 show-wall-of-text = Lleer más
 help-us-title = ¡Ayúdanos a validar les frases!
 help-us-explain = Primi'l botón de reproducción, sienti y dinos: ¿la grabación correspuende a la fras d'embaxo?
-no-clips-to-validate = Paez que nesta llingua nun hai dengún clip pa sentir. Ayúdanos a enllenar la cola grabando daqué agora.
+no-clips-to-validate = Paez que nesta llingua nun hai nengún clip pa sentir. Ayúdanos a enllenar la cola grabando daqué agora.
 vote-yes = Sí
 vote-no = Non
 toggle-play-tooltip = Primi { shortcut-play-toggle } p'alternar el mou de reproducción
@@ -357,7 +364,7 @@ about-avatar-clip-recording = Crea un clip de voz pa incluyilu y que la demás x
 browse-file-title = Xuba d'un ficheru
 browse-file = Arrastra y suelta o <browseWrap>restola</browseWrap>
 connect-gravatar = Coneutar con Gravatar
-gravatar_not_found = Nun s'alcontró dengún gravatar del corréu
+gravatar_not_found = Nun s'alcontró nengún gravatar del corréu
 file_too_large = El ficheru esbilláu ye pergrande
 manage-subscriptions = Xestión de les soscripciones
 email-already-used = El corréu yá s'usa nuna cuenta diferente
@@ -371,7 +378,7 @@ faq-what-cv-q = ¿Qué ye Common Voice?
 faq-what-cv-a =
     La teunoloxía de la reconocencia de voz ta revolucionando'l mou col que interactuamos coles máquines pero los sistemes que tán disponibles anguaño son caros y privativos. Common Voice ye parte de la iniciativa de Mozilla pa facer que la reconocencia de voz seya meyor y más accesible pa tol mundu pente la donación de voces que nos permiten a toos entrenar fácilmente aplicaciones qu'usen la voz.
     
-    Nun recoyemos namái muestres de les llingües más falaes, sinón de les minorizaes tamién. L'espublizamientu d'un conxuntu de datos diversu va permitir a los desendolcadores, empresarios y comunidaes enteres que rellenen ellos solos esi güecu. Amás de Commonn Voice, tamién tamos creando Deep Speech que ye un motor de reconocencia de voz de códigu abiertu.
+    Nun recoyemos namás muestres de les llingües más falaes, sinón de les minorizaes tamién. L'espublizamientu d'un conxuntu de datos diversu va permitir a los desendolcadores, empresarios y comunidaes enteres que rellenen ellos solos esi güecu. Amás de Commonn Voice, tamién tamos creando Deep Speech que ye un motor de reconocencia de voz de códigu abiertu.
 faq-why-important-q = ¿Por qué ye importante?
 faq-why-important-a =
     Davezu, la fala ye'l mou más natural que tenemos los humanos pa comunicanos ente nós y les teunoloxíes de voz tán brindando esa posibilidá a los preseos informáticos. Queremos permitir que los desendolcadores creen aplicaciones de reconocencia de voz ablucantes como traductores en tiempu real y asistentes de voz, pero pel momentu la mayoría de datos de voz riquíos pa crear estes tribes d'aplicaciones son caros y privativos. Esperamos que'l conxuntu de datos de Common Voice forna a los desendolcadores lo que precisen pa que la teunoloxía de voz tea disponible na so llingua.
@@ -407,7 +414,7 @@ faq-where-src-from-2-a =
     
     Pues ver les frases d'orixe nesta <githubLink>carpeta de GitHub</githubLink>.
 faq-why-not-ask-read-q = ¿Por qué nun-y pidís a la xente que llea llibros o artículos de Wikipedia n'otres llingues?
-faq-why-not-ask-read-a = Pa facer que'l conxuntu de datos de Common Voice seya lo más útil posible, decidiemos permitir namái testos que tean disponibles so la llicencia Creative Commons (CC 0). Usar l'estándar CC 0 fai que seya más difícil alcontrar y recoyer testos d'orixe pero permite a cualesquiera usar los datos de voz resultantes ensin torgues d'usu o autorización de Mozilla. P'acabar, esti conxuntu de datos plurillingüe van poder usalu investigadores, universidaes, empreses, gobiernos, organizaciones, aficionaos... En resume, tol mundu.
+faq-why-not-ask-read-a = Pa facer que'l conxuntu de datos de Common Voice seya lo más útil posible, decidiemos permitir namás testos que tean disponibles so la llicencia Creative Commons (CC 0). Usar l'estándar CC 0 fai que seya más difícil alcontrar y recoyer testos d'orixe pero permite a cualesquiera usar los datos de voz resultantes ensin torgues d'usu o autorización de Mozilla. P'acabar, esti conxuntu de datos plurillingüe van poder usalu investigadores, universidaes, empreses, gobiernos, organizaciones, aficionaos... En resume, tol mundu.
 faq-why-account-q = ¿Por qué debería rexistrar una cuenta?
 faq-is-account-public-q = ¿La información de la mio cuenta ye pública?
 faq-how-privacy-q = ¿Cómo aseguráis l'anonimatu y privacidá de la xente que donó les sos voces?
@@ -416,7 +423,7 @@ faq-what-determine-identity-q = ¿Qué significa que nun pueo «determinar la id
 faq-what-determine-identity-a =
     El conxuntu de datos de Common Voice ye un recursu públicu y abiertu que pue usase pa entrenar a una montonera d'aplicaciones qu'usen la voz. Pa protexer la seguranza de los nuesos collaboradores, pidimos a tol mundu que baxe esti conxuntu de datos que respete la so privacidá.
     
-    Tolos clips de voz del conxuntu de datos analícense pa desaniciar cualesquier información identificativa. Cuando baxes el conxuntu de datos comprométeste a que nun vas tentar d'identificar a dengún collaborador. Eso significa que nun vas poder rellacionar la información del conxuntu de datos cola información personal de los collaboradores. Por embargu, vas poder usar esta información pa entrenar la reconocencia de voz, la reconocencia de falantes u otres aplicaciones, por exemplu, enllazando la información del conxuntu de datos con otra información que yá heba ehí.
+    Tolos clips de voz del conxuntu de datos analícense pa desaniciar cualesquier información identificadora. Cuando baxes el conxuntu de datos comprométeste a que nun vas tentar d'identificar a nengún collaborador. Eso significa que nun vas poder rellacionar la información del conxuntu de datos cola información personal de los collaboradores. Por embargu, vas poder usar esta información pa entrenar la reconocencia de voz, la reconocencia de falantes u otres aplicaciones, por exemplu, enllazando la información del conxuntu de datos con otra información que yá heba ehí.
 faq-what-is-cv = ¿Qué ye Common Voice?
 faq-using-cv = Usu de Common Voice
 faq-description = Common Voice ye parte de la iniciativa de Mozilla pa deprende-yos a les máquines cómo falamos los humanos.
@@ -449,15 +456,17 @@ about-dataset-new-text = Contién milenta muestres de voz qu'ayuden a los desend
 about-clip-graveyard = Cementeriu de clips
 about-clip-graveyard-text = Fórmenlu los clips que nun s'incluyeron nel conxuntu de datos de Common Voice. Sicasí, ta disponible pa baxar.
 about-partners = Socios
+about-become-a-partner = Conversión a sociu
 about-partnership =
     Common Voice ye un proyeutu collaborativu que depende de la comunidá de socios y collaboradores pa crear el conxuntu de datas de voz abiertu más grande del momentu.
     
     Prestaríanos agradecer a les persones y organizaciones de darréu pola so ayuda col proyeutu:
 about-get-involved = Andecha
-about-get-involved-text =
-    ¿Quies ayudar a facer que Common Voice seya meyor?
-    ¡Xenial! Contauta con nós per corréu o <discourseLink>Discourse</discourseLink>,
-    unvia comentarios per <githubLink>GitHub</githubLink> o xúnite a nós en <slackLink>Slack</slackLink>.
+about-get-involved-text-2 =
+    ¿Quies ameyorar Common Voice entá más?
+    ¡Xenial! Contauta per corréu o foros de <discourseLink>Discourse</discourseLink>,
+    unvia problemes per <githubLink>GitHub</githubLink> o xúnite a la sala de
+    charra en <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = ¿Por qué?
 about-nav-how-it-works = ¿Cómo?
 about-nav-partners = Socios
@@ -566,6 +575,7 @@ go-languages-page = Dir a la páxina de llingües
 ready-to-validate = ¿Tas preparáu p'ayudanos a validar frases?
 more = Más
 close = Zarrar
+download = Baxar
 dataset-version = Versión
 
 ## Download Modal

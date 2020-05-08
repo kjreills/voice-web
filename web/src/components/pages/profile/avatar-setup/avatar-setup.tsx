@@ -24,9 +24,8 @@ import {
 } from '../../../ui/icons';
 import { Button } from '../../../ui/ui';
 import { Voice, PlayButton } from '../../../primary-buttons/primary-buttons';
-import AudioIOS from '../../contribution/speak/audio-ios';
 import AudioWeb, { AudioError } from '../../contribution/speak/audio-web';
-import { isFirefoxFocus, isNativeIOS, isProduction } from '../../../../utility';
+import { isProduction } from '../../../../utility';
 import { Suspense, lazy } from 'react';
 const Lottie = lazy(() => import('react-lottie'));
 const animationData = require('../../../layout/data.json');
@@ -42,10 +41,7 @@ function resizeImage(file: File, maxSize: number): Promise<Blob> {
       dataURI.split(',')[0].indexOf('base64') >= 0
         ? atob(dataURI.split(',')[1])
         : unescape(dataURI.split(',')[1]);
-    const mime = dataURI
-      .split(',')[0]
-      .split(':')[1]
-      .split(';')[0];
+    const mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
     const max = bytes.length;
     const ia = new Uint8Array(max);
     for (var i = 0; i < max; i++) ia[i] = bytes.charCodeAt(i);
@@ -123,7 +119,7 @@ class AvatarSetup extends React.Component<Props, State> {
     avatarClipUrl: null,
   };
 
-  audio: AudioWeb | AudioIOS;
+  audio: AudioWeb;
   isUnsupportedPlatform = false;
   maxVolume = 0;
   recordingStartTime = 0;
@@ -132,13 +128,12 @@ class AvatarSetup extends React.Component<Props, State> {
   audioRef = React.createRef<HTMLAudioElement>();
 
   async componentDidMount() {
-    this.audio = isNativeIOS() ? new AudioIOS() : new AudioWeb();
+    this.audio = new AudioWeb();
     this.audio.setVolumeCallback(this.updateVolume.bind(this));
 
     if (
       !this.audio.isMicrophoneSupported() ||
-      !this.audio.isAudioRecordingSupported() ||
-      isFirefoxFocus()
+      !this.audio.isAudioRecordingSupported()
     ) {
       this.isUnsupportedPlatform = true;
     }

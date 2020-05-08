@@ -68,6 +68,7 @@ hi-IN = 印地語
 hr = 克羅埃西亞語
 hsb = 上索布語
 hu = 匈牙利語
+hy-AM = 亞美尼亞語
 ia = 國際語
 id = 印尼語
 is = 冰島語
@@ -75,6 +76,7 @@ it = 義大利語
 izh = 伊喬里亞語
 ja = 日語
 ka = 喬治亞語
+kaa = 卡拉卡爾帕克語
 kab = 卡拜爾語
 kbd = 卡巴達語
 kk = 哈薩克語
@@ -126,6 +128,7 @@ ta = 坦米爾語
 te = 泰盧固語
 tg = 塔吉克語
 th = 泰語
+tl = 塔加祿語（菲律賓）
 tr = 土耳其語
 tt = 韃靼語
 uby = 尤比克語
@@ -133,6 +136,7 @@ udm = 烏德莫特語
 uk = 烏克蘭語
 ur = 烏爾都語
 uz = 烏茲別克語
+vec = 威尼斯語
 vi = 越南語
 vot = 沃特語
 zh-CN = 華語（中國）
@@ -229,7 +233,7 @@ whats-public = 有哪些資料會公開？
 email-not-public = 我們不會公開您的 E-Mail。
 recordings-and-locale-public = 您貢獻的錄音數量，以及貢獻的語言將會是公開的。
 username-optin-public = 您可以讓使用者名稱公開或保持匿名。
-demographic-deidentified = 非必要提供的人口統計資料（例如年齡、性別、語言、口音）將會在您送出的語音資料中被去識別化，也永遠不會公開在您的資料上。
+demographic-deidentified-clarity = 選填的人口統計資料（例如年齡、性別、語言、腔調）不會在您的個人資料上公開，也不會在資料集中與您的帳號連結。每個錄音片段只會為了能做更準確的分析，而與您的人口統計資料連結。舉例來說，研究者可能想要對特定的人口分層做出更細的訓練模型。
 username-email-not-demographic = 您的使用者名稱與 E-Mail 不會跟公開發布的資料被關聯起來。
 
 ## Speak & Listen Shortcuts
@@ -444,11 +448,11 @@ about-partnership =
     
     特別感謝下列人員與組織單位，協助本專案:
 about-get-involved = 參與我們
-about-get-involved-text =
+about-get-involved-text-2 =
     想要幫忙讓 Common Voice 變得更棒嗎？
-    沒問題！請寄 E-Mail 給我們，也可以到 <discourseLink>Discourse</discourseLink> 留言、
-    透過 <githubLink>GitHub</githubLink> 送出意見回饋、
-    也可以加入我們的 <slackLink>Slack</slackLink>。
+    沒問題！請寄 E-Mail 給我們，也可以到 <discourseLink>Discourse</discourseLink>
+    討論區留言、透過 <githubLink>GitHub</githubLink> 回報網站問題、
+    或是加入我們的 <matrixLink>Matrix</matrixLink> 社群聊天室。
 about-nav-why-common-voice = 為什麼？
 about-nav-how-it-works = 怎麼做？
 about-nav-partners = 夥伴
@@ -621,7 +625,7 @@ contribute-more = 準備好再作 { $count } 筆了嗎？
 record-cta = 開始錄音
 record-platform-not-supported = 很抱歉，目前暫不支援您的平台。
 record-platform-not-supported-desktop = 在桌上型電腦，您可以下載最新版的:
-record-platform-not-supported-ios = <bold>iOS</bold> 使用者可下載我們的免費程式:
+record-platform-not-supported-ios-non-safari = 在 iOS 平台，請繼續前往 Safari 開啟錄音功能…
 record-must-allow-microphone = 您必須允許使用麥克風。
 record-no-mic-found = 找不到麥克風
 record-error-too-short = 錄音太短了。
@@ -635,6 +639,8 @@ record-again-instruction = 好！點擊<recordIcon></recordIcon>錄下下個片�
 record-again-instruction2 = 繼續加油，再錄一筆！<recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon>最後一筆了！
 review-tooltip = 在此確認或重錄片段
+share-clip = 分享您的錄音片段
+share-common-voice = 分享 Common Voice
 review-instruction = 確認錄音內容，有需要的話可以重錄
 record-submit-tooltip = 準備好即可{ $actionType }送出
 clips-uploaded = 已上傳片段
@@ -647,7 +653,9 @@ listen-instruction = { $actionType }<playIcon></playIcon>，聽聽他們有準�
 listen-again-instruction = 幹得好！<playIcon></playIcon>準備好就可以再聽一次
 listen-3rd-time-instruction = 完成兩筆了<playIcon></playIcon>，繼續保持！
 listen-last-time-instruction = <playIcon></playIcon>最後一筆了！
-nothing-to-validate = 我們沒有這個語言可供驗證的錄音，請幫助我們多錄一些。
+listen-empty-state = 我們已經沒有這種語言的片段可以驗證了…
+speak-empty-state = 我們已經沒有這種語言的文字可以錄音了…
+speak-empty-state-cta = 貢獻語句
 record-button-label = 錄下您的聲音
 share-title-new = <bold>請幫助我們</bold>找到更多聲音
 keep-track-profile = 註冊帳號來追蹤個人貢獻進度

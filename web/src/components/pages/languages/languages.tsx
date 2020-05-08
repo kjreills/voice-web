@@ -5,11 +5,7 @@ import {
 } from 'fluent-react/compat';
 import * as React from 'react';
 import { connect } from 'react-redux';
-import {
-  BaseLanguage,
-  InProgressLanguage,
-  LaunchedLanguage,
-} from 'common/language-stats';
+import { BaseLanguage, InProgressLanguage, LaunchedLanguage } from 'common';
 import API from '../../../services/api';
 import { NATIVE_NAMES } from '../../../services/localization';
 import { trackLanguages } from '../../../services/tracker';
@@ -187,12 +183,10 @@ class LanguagesPage extends React.PureComponent<Props, State> {
     function filterLanguages<T>(languages: T[]): T[] {
       return query
         ? languages.filter(({ locale }: any) => {
-            const q = query.toLowerCase();
+            const q = query.toLowerCase().trim();
             return (
               locale.includes(q) ||
-              getString(locale)
-                .toLowerCase()
-                .includes(q) ||
+              getString(locale).toLowerCase().includes(q) ||
               (NATIVE_NAMES[locale] || '').toLowerCase().includes(q)
             );
           })

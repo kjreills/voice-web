@@ -64,10 +64,11 @@ ga-IE = Iršćina
 gl = Galicišćina
 ha = Hausa
 he = Hebrejšćina
-hi-IN = Hindišćina
+hi = Hindišćina
 hr = Chorwatšćina
 hsb = Hornjoserbšćina
 hu = Madźaršćina
+hy-AM = Armenšćina
 ia = Interlingua
 id = Indonešćina
 is = Islandšćina
@@ -75,6 +76,7 @@ it = Italšćina
 izh = Ižoršćina
 ja = Japanšćina
 ka = Georgišćina
+kaa = Karakalpakšćina
 kab = Kabylšćina
 kbd = Kabardinšćina
 kk = Kazachšćina
@@ -126,6 +128,7 @@ ta = Tamilšćina
 te = Telugušćina
 tg = Tadźikišćina
 th = Thaišćina
+tl = Tagalog
 tr = Turkowšćina
 tt = Tataršćina
 uby = Ubychišćina
@@ -133,6 +136,7 @@ udm = Udmurtšćina
 uk = Ukrainšćina
 ur = Urdu
 uz = Uzbekšćina
+vec = Wenecianišćina
 vi = Vietnamšćina
 vot = Wotšćina
 zh-CN = Chinšćina (China)
@@ -236,7 +240,7 @@ whats-public = Što je zjawne?
 email-not-public = Wašu e-mejlowu adresu njewozjewimy.
 recordings-and-locale-public = Ličba natočenjow a rěčow, ke kotrymž přinošujeće, budu zjawne.
 username-optin-public = Móžeće swoje wužiwarske mjeno wozjewić abo anonymizować.
-demographic-deidentified = Na přeće wotpósłane demografiske daty (na př. staroba, splah, rěč a akcent) so z wašich wotpósłanych hłosowych datow wotstronja a ženje we wašim profilu njewozjewja.
+demographic-deidentified-clarity = Opcionelnje zapodate demografiske daty (na př. staroba, splah, rěč a akcent) so we wašim profilu ženje njewozjewja a z wašim kontom w datowej sadźbje njezwjazaja. Jednotliwe awdioklipy so z demografiskimi datami za dokładnišu analyzu zwjazaja - slědźer na přikład chce snano treningowy model na wěsty demografiski segment wusměrić.
 username-email-not-demographic = Waše wužiwarske mjeno a e-mejlowa adresa so z wozjewjenymi datami njezwjazujetej.
 
 ## Speak & Listen Shortcuts
@@ -451,9 +455,9 @@ about-partnership =
     
     Chcemy so slědowacym ludźom a organizacijam za jich pomoc na projekće dźakować:
 about-get-involved = Čińće sobu
-about-get-involved-text =
+about-get-involved-text-2 =
     Chceće pomhać, Common Voice polěpšić?
-    Wulkotnje! Stajće so z nami přez e-mejl abo na <discourseLink>Discourse</discourseLink>  do zwiska, sćelće swoje komentary přez <githubLink>Github</githubLink> abo wopytajće nas na <slackLink>Slack</slackLink>.
+    Wulkotnje! Stajće so z nami přez e-mejl abo we forumach <discourseLink>Discourse</discourseLink>  do zwiska, sćelće sydłowe problemy přez <githubLink>Github</githubLink> abo wopytajće nas w chaće zhromadźenstwa <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Čehodla?
 about-nav-how-it-works = Kak?
 about-nav-partners = Partnerojo
@@ -634,7 +638,7 @@ contribute-more =
 record-cta = Natočenje startować
 record-platform-not-supported = Je nam žel, ale waša platforma so tuchwilu njepodpěruje.
 record-platform-not-supported-desktop = Na desktopowych ličakach móžeće najnowšu wersiju sćahnyć:
-record-platform-not-supported-ios = Wužiwarjo <bold>iOS</bold> móža naše darmotne nałoženje sćahnyć:
+record-platform-not-supported-ios-non-safari = Prošu pokročujće na iOS ze Safari, zo byšće natočenje zmóžnił…
 record-must-allow-microphone = Dyrbiće přistup na mikrofon dowolić.
 record-no-mic-found = Žadyn mikrofon namakany.
 record-error-too-short = Natočenje bě překrótke.
@@ -648,6 +652,8 @@ record-again-instruction = Wulkotne! <recordIcon></recordIcon> Natočće swój p
 record-again-instruction2 = Dale tak, <recordIcon></recordIcon> znowa natočić
 record-last-instruction = <recordIcon></recordIcon> Poslednje!
 review-tooltip = Tu móžeće klipy přepruwować a znowa natočić
+share-clip = Waš klip dźělić
+share-common-voice = Common Voice dźělić
 review-instruction = Klipy přepruwować a znowa natočić, jeli trěbne
 record-submit-tooltip = { $actionType } wotpósłać, hdyž sće hotowy
 clips-uploaded = Natočenja nahrate
@@ -660,11 +666,17 @@ listen-instruction = { $actionType } <playIcon></playIcon> je so sada korektnje 
 listen-again-instruction = Wulkotne dźěło! <playIcon></playIcon> Słuchajće znowa, hdyž sće hotowy
 listen-3rd-time-instruction = 2 sčinjenej, <playIcon></playIcon> dale tak!
 listen-last-time-instruction = <playIcon></playIcon> Poslednje!
-nothing-to-validate = Nimamy ničo, kotrež móžemy w tutej rěči přepruwować, prošu pomhajće nam čakanski rynk pjelnić.
+listen-empty-state = Klipy su nam wušli, kotrež so w tutej rěči přepruwuja...
+speak-empty-state = Sady su nam wušli, kotrež so w tutej rěči natočeja...
+speak-empty-state-cta = Sady přinošować
 record-button-label = Nahrajće swój hłós
 share-title-new = <bold>Pomhajće nam</bold>, dalše hłosy namakać
 keep-track-profile = Slědujće swojemu postupej z profilom
 login-to-get-started = Přizjewće so abo registrujće so, zo byšće započał
+target-segment-first-card = Přinošujeće k našemu prěnjemu cilowemu segmentej
+target-segment-first-banner = Pomhajće prěni cilowy segment Common Voice w { $locale } wutworić
+target-segment-add-voice = Přidajće swój hłós
+target-segment-learn-more = Dalše informacije
 
 ## Reporting
 

@@ -68,6 +68,7 @@ hi-IN = Hindi
 hr = Croate
 hsb = Haut-sorabe
 hu = Hongrois
+hy-AM = Arménien
 ia = Interlingua
 id = Indonésien
 is = Islandais
@@ -75,6 +76,7 @@ it = Italien
 izh = Ingrien
 ja = Japonais
 ka = Géorgien
+kaa = Karakalpak
 kab = Kabyle
 kbd = Kabarde
 kk = Kazakh
@@ -126,6 +128,7 @@ ta = Tamoul
 te = Télougou
 tg = Tadjik
 th = Thaï
+tl = Tagalog
 tr = Turc
 tt = Tatar
 uby = Oubykh
@@ -133,6 +136,7 @@ udm = Oudmourte
 uk = Ukrainien
 ur = Ourdou
 uz = Ouzbek
+vec = Vénitien
 vi = Vietnamien
 vot = Vote
 zh-CN = Chinois (Chine)
@@ -232,7 +236,7 @@ whats-public = Quelles informations sont publiques ?
 email-not-public = Nous ne rendrons pas publique votre adresse électronique.
 recordings-and-locale-public = Le nombre d’enregistrements et les langues dans lesquelles vous contribuez seront publics.
 username-optin-public = Vous pouvez choisir de rendre votre nom d’utilisateur ou d’utilisatrice public ou anonyme
-demographic-deidentified = Les informations démographiques facultatives (p. ex. l’âge, le sexe, la langue et l’accent) sont dissociées de vos enregistrements audio et ne seront jamais affichées publiquement sur votre profil.
+demographic-deidentified-clarity = Les données démographiques éventuellement soumises (par exemple, l’âge, le sexe, la langue et l’accent) ne seront jamais rendues publiques sur votre profil et ne seront pas liées à votre compte dans l’ensemble de données. Des échantillons audio individuels seront associés à des données démographiques à des fins d’analyse plus précise ; par exemple, une chercheuse pourrait vouloir cibler un modèle d’entrainement sur un segment démographique spécifique.
 username-email-not-demographic = Votre nom d’utilisateur ou d’utilisatrice et votre adresse électronique ne seront pas associés aux données publiées.
 
 ## Speak & Listen Shortcuts
@@ -445,11 +449,11 @@ about-partnership =
     
     Nous voudrions remercier les personnes et organisations suivantes pour leur aide dans le projet :
 about-get-involved = Participer
-about-get-involved-text =
+about-get-involved-text-2 =
     Vous voulez aider à améliorer Common Voice ?
-    Super ! Contactez-nous par courriel ou bien sur <discourseLink>Discourse</discourseLink>,
-    envoyez des commentaires sur <githubLink>GitHub</githubLink>,
-    ou rejoignez-nous sur <slackLink>Slack</slackLink>.
+    Super ! Contactez-nous par courriel ou bien sur les forums <discourseLink>Discourse</discourseLink>,
+    signalez des problèmes sur <githubLink>GitHub</githubLink>,
+    ou rejoignez la discussion communautaire sur <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Pourquoi ?
 about-nav-how-it-works = Comment ?
 about-nav-partners = Partenaires
@@ -620,11 +624,11 @@ shortcuts = Raccourcis
 clips-with-count = <bold>{ $count }</bold> extraits
 goal-help-recording = Grâce à vous, Common Voice a atteint <goalPercentage></goalPercentage> de son objectif quotidien de { $goalValue } enregistrements !
 goal-help-validation = Grâce à vous, Common Voice a atteint <goalPercentage></goalPercentage> de son objectif quotidien de { $goalValue } validations !
-contribute-more = Prêt à en faire { $count } de plus ?
+contribute-more = Prêt·e à en faire { $count } de plus ?
 record-cta = Commencer l’enregistrement
 record-platform-not-supported = Nous sommes désolés, mais votre plateforme n’est pas encore prise en charge.
 record-platform-not-supported-desktop = Pour les ordinateurs de bureau, vous pouvez télécharger le plus récent :
-record-platform-not-supported-ios = Les utilisateurs <bold>iOS</bold> peuvent télécharger notre application gratuite :
+record-platform-not-supported-ios-non-safari = Sous iOS, veuillez continuer avec Safari pour activer l’enregistrement…
 record-must-allow-microphone = Vous devez autoriser l’accès au microphone.
 record-no-mic-found = Aucun microphone trouvé.
 record-error-too-short = L’enregistrement est trop court.
@@ -638,8 +642,10 @@ record-again-instruction = Formidable ! <recordIcon></recordIcon> Enregistrez v
 record-again-instruction2 = Continuez comme ça et enregistrez-en un de plus.
 record-last-instruction = <recordIcon></recordIcon> C’est le dernier !
 review-tooltip = Vérifier et réenregistrer au besoin
+share-clip = Partager votre enregistrement
+share-common-voice = Partager Common Voice
 review-instruction = Vérifiez et réenregistrez si nécessaire
-record-submit-tooltip = { $actionType } envoyer lorsque vous êtes prêt
+record-submit-tooltip = { $actionType } envoyer lorsque vous êtes prêt·e
 clips-uploaded = Clips mis en ligne
 record-abort-title = D’abord finir d’enregistrer ?
 record-abort-text = Quitter maintenant vous fera perdre votre progression
@@ -647,10 +653,12 @@ record-abort-submit = Envoyer les enregistrements
 record-abort-continue = Finir d’enregistrer
 record-abort-delete = Quitter et supprimer tous mes enregistrements
 listen-instruction = { $actionType } <playIcon></playIcon>, la phrase a-t-elle été correctement prononcée ?
-listen-again-instruction = Excellent travail ! <playIcon></playIcon> Écoutez à nouveau lorsque vous êtes prêt
+listen-again-instruction = Excellent travail ! <playIcon></playIcon> Écoutez à nouveau lorsque vous êtes prêt·e
 listen-3rd-time-instruction = Plus que deux <playIcon></playIcon>, continuez !
 listen-last-time-instruction = <playIcon></playIcon> C’est le dernier !
-nothing-to-validate = Nous n’avons rien à valider dans cette langue, aidez-nous à ajouter quelques enregistrements dans la file d’attente.
+listen-empty-state = Nous n’avons plus d’échantillons à valider dans cette langue…
+speak-empty-state = Nous n’avons plus de phrases à enregistrer dans cette langue…
+speak-empty-state-cta = Proposer des phrases
 record-button-label = Enregistrer votre voix
 share-title-new = <bold>Aidez-nous</bold> à trouver de nouvelles voix
 keep-track-profile = Mesurez votre progression en créant un profil

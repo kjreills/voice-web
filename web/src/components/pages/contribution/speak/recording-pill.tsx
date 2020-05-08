@@ -13,6 +13,7 @@ import {
   ShareIcon,
   StopIcon,
 } from '../../../ui/icons';
+import { getAudioFormat } from '../../../../utility';
 import { ContributionPillProps } from '../contribution';
 import Pill, { PillStatus } from '../pill';
 import { SentenceRecording } from './sentence-recording';
@@ -66,13 +67,10 @@ function RecordingPill({
       )}
 
       {!children && status === 'done' && (
-        <React.Fragment>
-          <audio
-            src={clip.recording.url}
-            preload="auto"
-            onEnded={toggleIsPlaying}
-            ref={audioRef}
-          />
+        <>
+          <audio preload="auto" onEnded={toggleIsPlaying} ref={audioRef}>
+            <source src={clip.recording.url} type={getAudioFormat()} />
+          </audio>
           <Tooltip
             arrow
             open={isPlaying || showSentenceTooltip}
@@ -92,7 +90,7 @@ function RecordingPill({
           {isPlaying ? (
             <div className="placeholder" />
           ) : (
-            <React.Fragment>
+            <>
               <Tooltip arrow title={getString('review-tooltip')}>
                 <button className="redo" type="button" onClick={onRerecord}>
                   <span className="padder">
@@ -100,14 +98,16 @@ function RecordingPill({
                   </span>
                 </button>
               </Tooltip>
-              <button className="share" type="button" onClick={onShare}>
-                <span className="padder">
-                  <ShareIcon />
-                </span>
-              </button>
-            </React.Fragment>
+              <Tooltip arrow title={getString('share-clip')}>
+                <button className="share" type="button" onClick={onShare}>
+                  <span className="padder">
+                    <ShareIcon />
+                  </span>
+                </button>
+              </Tooltip>
+            </>
           )}
-        </React.Fragment>
+        </>
       )}
     </Pill>
   );

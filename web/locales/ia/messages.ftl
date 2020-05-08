@@ -68,6 +68,7 @@ hi-IN = Hindi
 hr = Croata
 hsb = Sorbio, alte
 hu = Hungaro
+hy-AM = Arminiano
 ia = Interlingua
 id = Indonesiano
 is = Islandese
@@ -75,6 +76,7 @@ it = Italiano
 izh = Azoriano
 ja = Japonese
 ka = Georgiano
+kaa = Karakalpak
 kab = Cabilo
 kbd = Kabardo
 kk = Kazakh
@@ -126,6 +128,7 @@ ta = Tamil
 te = Telugu
 tg = Tajik
 th = Thai
+tl = Tagalog
 tr = Turco
 tt = Tataro
 uby = Ubykh
@@ -133,6 +136,7 @@ udm = Udmurte
 uk = Ukrainiano
 ur = Urdu
 uz = Uzbek
+vec = Venetian
 vi = Vietnamese
 vot = Votico
 zh-CN = Chinese (China)
@@ -230,7 +234,7 @@ whats-public = Que es Public?
 email-not-public = Nos non rendera public tu email.
 recordings-and-locale-public = Le numero de registrationes e le linguas que tu usa pro contribuer sera public.
 username-optin-public = Tu pote eliger de render public tu nomine de usator o anonyme.
-demographic-deidentified = Le datos demographic optionalmente inviate (p.ex. etate, sexo, lingua e accento) es disassociate de tu datos de voce e non essera jammais rendite public sur tu profilo.
+demographic-deidentified-clarity = Le datos demographic optional (p.ex. etate, sexo, lingua, accento) nunquam essera publicate sur tu profilo e non essera ligate a tu conto in le collection de datos. Le retalios audio individual essera associate al datos demographic pro permitter un analyse plus accurate; per exemplo, un recercator poterea concentrar un modello de training a un segmento demographic particular.
 username-email-not-demographic = Tu nomine de usator e email non essera associate con le datos publicate.
 
 ## Speak & Listen Shortcuts
@@ -443,11 +447,11 @@ about-partnership =
     
     Nos volerea regratiar le sequente personas e organisationes pro lor adjuta al projecto:
 about-get-involved = Collabora
-about-get-involved-text =
-    Vole tu adjutar a render Common Voice mesmo melior?
-    Grande! Tene te in contacto via email o sur <discourseLink>Discourse</discourseLink>,
-    invia un commentario per <githubLink>GitHub</githubLink>,
-    o junge te a nos sur <slackLink>Slack</slackLink>.
+about-get-involved-text-2 =
+    Vole adjutar a meliorar Common Voice?
+    Optimo! Contacta nos via e-mail o le foros de <discourseLink>Discourse</discourseLink>,
+    signala problemas con le sito via <githubLink>GitHub</githubLink>,
+    o junge te al conversation communitari sur <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Proque?
 about-nav-how-it-works = Como ?
 about-nav-partners = Partners
@@ -573,7 +577,7 @@ download-no = No gratias
 
 ## Contact Modal
 
-contact-title = Modulo de contacto
+contact-title = Formulario de contacto
 contact-form-name =
     .label = Nomine
 contact-form-message =
@@ -626,7 +630,7 @@ contribute-more =
 record-cta = Initiar a registrar
 record-platform-not-supported = Nos lo regretta, ma tu platteforma non es actualmente supportate.
 record-platform-not-supported-desktop = Sur computatores de scriptorio tu pote discargar le ultime:
-record-platform-not-supported-ios = Le usatores de <bold>iOS</bold> pote discargar nostre application gratuite:
+record-platform-not-supported-ios-non-safari = Sur iOS, continua con Safari pro activar le registration…
 record-must-allow-microphone = Tu debe permitter le accesso al microphono
 record-no-mic-found = Nulle microphono trovate
 record-error-too-short = Le registration era troppo breve.
@@ -640,6 +644,8 @@ record-again-instruction = Magnific!<recordIcon></recordIcon> Registra tu proxim
 record-again-instruction2 = Continua assi, registra de novo <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Le ultime!
 review-tooltip = Reascolta e re-registra retalios hic
+share-clip = Compartir tu retalio
+share-common-voice = Compartir Common Voice
 review-instruction = Verifica le retalios e re-registra si necessari
 record-submit-tooltip = { $actionType } inviar quando preste
 clips-uploaded = Retalios incargate
@@ -652,7 +658,9 @@ listen-instruction = { $actionType }<playIcon></playIcon> – Es iste pronunciat
 listen-again-instruction = Grande labor!<playIcon></playIcon> Ascolta ancora quando tu es preste
 listen-3rd-time-instruction = 2 minus, retene lo alte!<playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Ultimo!
-nothing-to-validate = Nos non ha alco a validar in iste lingua, adjuta nos a plenar le cauda.
+listen-empty-state = Nos non ha plus registrationes a validar pro iste lingua...
+speak-empty-state = Nos non ha plus phrases a registrar pro iste lingua...
+speak-empty-state-cta = Contribue con altere phrases
 record-button-label = Registra tu voce
 share-title-new = <bold>Adjuta nos</bold> a trovar plus voces
 keep-track-profile = Tracia tu progresso con un profilo

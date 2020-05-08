@@ -2,13 +2,13 @@
 
 yes-receive-emails = Ih, ceyyeɛ-iyi-d imaylen. Bɣiɣ ad yi-d-ttawḍen yisallen ɣef usenfaṛ n Commen Voice.
 stayintouch = Nekkni deg Mozilla, nbennu tarbaɛt itezzin ɣef tetiknulujit n taɣect. Nebɣa ad neqqim akked umaynut d yileqman, iɣbula n yisefka imaynuten daɣen ad nsel ugar ɣef wamek ara ttwasqedcen isefka-agi.
-privacy-info = Ad neḍmen d akken ad neḥrez talɣut-nwen. Ɣeṛ ugar n yisallen deg <privacyLink>tsertit-nneɣ tabaḍnit</privacyLink>.
-return-to-cv = Uɣal ar Common Voice
+privacy-info = Ad neḍmen aḥraz n talɣut-nwen. Ɣer ugar n yisallen deg <privacyLink>tsertit-nneɣ tabaḍnit</privacyLink>.
+return-to-cv = Uɣal ɣer Common Voice
 email-input =
     .label = Imayl
 submit-form-action = Azen
 loading = Asali…
-email-opt-in-info = Bɣiɣ ad d-ṭṭfeɣ imaylen am ismektiyen n yiswan, aswir-iw n umecwar n ileqman akked uɣmis ɣef Common Voice.
+email-opt-in-info = Bɣiɣ ad d-ṭṭfeɣ imaylen am yismektiyen n yiswan, aswir-iw n umecwar n yileqman akked uɣmis ɣef Common Voice.
 email-opt-in-info-title = Jerred deg tebdert n unermes Common Voice
 email-opt-in-info-sub-with-challenge = Ṭṭef imaylen am iznan n timzizliyin akked usmekti n iswiyen, tilḥin deg umahel akked isallen ɣef Common Voice.
 email-opt-in-privacy = Ma tferneḍ armas n yimaylen, ad tqebleḍ d akken Mozilla ad tesseqdec talɣut-a akken i tettwasegza deg <privacyLink>Tasertit Tabaḍnit <privacyLink> n Mozilla.
@@ -68,6 +68,7 @@ hi-IN = Tahendit
 hr = Takarwasit
 hsb = Sorbyan, Tameqqrant
 hu = Tahungaṛit
+hy-AM = Taṛminit
 ia = Tutlayt tagraɣlant
 id = Tandunizit
 is = Taṣlandit
@@ -75,6 +76,7 @@ it = Taṭelyanit
 izh = Tizhuryant
 ja = Tajapunit
 ka = Tajyuṛjit
+kaa = Karakalpak
 kab = Taqbaylit
 kbd = Takabardyant
 kk = Takazaxt
@@ -126,6 +128,7 @@ ta = Taṭamilit
 te = Tatelgut
 tg = Tatajikt
 th = Taṭaylant
+tl = Tagalugt
 tr = Taṭurkit
 tt = Taṭaṭarit
 uby = Tubyixt
@@ -133,6 +136,7 @@ udm = Tudmurt
 uk = Takrinit
 ur = Urdu
 uz = Tuzbikt
+vec = Taviṭnamit
 vi = Tavyiṭnamit
 vot = Tavutikt
 zh-CN = Tacinwat (Cinwa)
@@ -230,7 +234,7 @@ whats-public = D acu-tt telɣut tazayezt?
 email-not-public = Ur nettara ara imayl d azayez.
 recordings-and-locale-public = Amḍan n yikalasen akked tutlayin anida tettekkaḍ ad d-banen.
 username-optin-public = Tzemreḍ ad tferneḍ isem-ik n useqdac ma ad yili d azayez neɣ d abadni.
-demographic-deidentified = Talɣut tadimugrafit tafrayant (amedya: awtay, tuzuft, tutlayt akked ususru) ad tettwaqqen ɣer ikalasen-ik daɣen ur d-ttwaskanen ara i yimdanen ɣef umaɣnu-ik.
+demographic-deidentified-clarity = Isefka n tedimugrafit i d-yettwaznen s lxetyaṛ (md. awtay, tuzuft, tutlayt, akken ususru) ur ǧǧin ad ttwaseknen s wudem azayaz, daɣen ad ttwacudden ɣer umiḍan-ik deg tegrumma n yisefka. Ikalasen imeslawen i yiman-nsen ad ttwaqqnen d yisefka n tedimugrafit i wugar n tseddi n tesleḍt - amedya, amnadi izmer ad yebɣu taneɣruft n usluɣmu n kra n yimdanen kan.
 username-email-not-demographic = Isem-ik n useqdac akked tansa-ik imayl ur d-ttwaqqanen ara ɣer yisefka-ik izuyaz.
 
 ## Speak & Listen Shortcuts
@@ -443,11 +447,11 @@ about-partnership =
     
     Ad nesnemmer meṛṛa imdanen akked tuddsiwin-a ɣef tallelt deg usenfaṛ:
 about-get-involved = Ttekki
-about-get-involved-text =
-    Tabɣiḍ ad tesnerniḍ Common Voice ?
-    Igerrez! Nermes-aɣ-d s yimayl neɣ deg <discourseLink>Discourse</discourseLink>,
-    azen-d iwenniten deg <githubLink>GitHub</githubLink>,
-    neɣ ddu-d yid-neɣ deg <slackLink>Slack</slackLink>.
+about-get-involved-text-2 =
+    Tebɣiḍ ad d-tefkkeḍ afus n tallelt deg uqaεed n Common Voice?
+    Igerrez! Nermes-aɣ-d s imayl neɣ afurum<discourseLink>Discourse</discourseLink>
+    Azen-d uguren ɣer useɣwen <githubLink>GitHub</githubLink>, neɣ ddu ɣer
+    udiwenni n timseɣwent<matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Acuɣer?
 about-nav-how-it-works = Amek?
 about-nav-partners = Imendiden
@@ -465,7 +469,7 @@ glossary = Amawal
 localization = Asideg
 localization-explanation = D akala-nneɣ i tsuqilt akked uṣeggem n ugbur i ddeqs n tutlayin.
 sentence-collection = Alqaḍ n tefyar
-sentence-collection-explanation = Lqeḍ-d tifyar n taɣult tazayezt, neɣ aru tifyar tmayutin ara yilin deg taɣult tazayezt.
+sentence-collection-explanation = Lqeḍ-d tifyar n taɣult tazayezt, neɣ aru tifyar timayutin ara yilin deg taɣult tazayezt.
 hours-recorded-explanation = Amḍan n yisragen n usukles n taɣect i d-nelqeḍ akka ar tura.
 hours-validated-explanation = Amḍan n yisragen n usekles n taɣect i yettwaqeblen xarṣum sɣur sin neɣ kraḍ n yiseqdacen i yefrnen "Ih". Ayagi yemmal-d asfari n yiswi n 10 000 n yisragen n usenfaṛ.
 sst = Aɛqal n taɣect (STT)
@@ -626,11 +630,11 @@ contribute-more =
 record-cta = Bdu asekles
 record-platform-not-supported = Suref-aɣ, anagraw-ik ur yettwasefrak ara akka tura.
 record-platform-not-supported-desktop = I yiselkimen n tnrait, tzemreḍ ad tessidreḍ imaynuten:
-record-platform-not-supported-ios = Iseqdsacen n <bold>iOS</bold> zemren ad sidren asnaɣ-nneɣ n baṭel :
+record-platform-not-supported-ios-non-safari = Deg iOS ttxil kemmel s Safari akken ad tremdeḍ asekles…
 record-must-allow-microphone = Ilaq ad tsirgeḍ anekcum i usawaḍ.
 record-no-mic-found = Ulac asawaḍ.
 record-error-too-short = Meẓẓi mliḥ usekles-nni.
-record-error-too-long = Meqqeṛ mliḥ usekles-nni.
+record-error-too-long = Meqqer mliḥ usekles-nni.
 record-error-too-quiet = Ixuṣṣ mliḥ ṣṣut n usekles-nni.
 record-cancel = Sefsex asekles
 record-instruction = ɣef { $actionType } <recordIcon></recordIcon> sakin ɣer-d tafyirt s cwiṭ n leɛyaḍ
@@ -640,6 +644,8 @@ record-again-instruction = Ayyuz! <recordIcon></recordIcon> Sekles tukkist i d-i
 record-again-instruction2 = Kemmel akken, sekles tikelt-nniḍen <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> D aneggaru!
 review-tooltip = Cegger & ales asekles dagi ticki teddiḍ
+share-clip = Bḍu akalas-ik
+share-common-voice = Bḍu Common Voice7
 review-instruction = Cegger & ales asekles ma tesriḍ
 record-submit-tooltip = { $actionType } azen ticki theggaḍ
 clips-uploaded = Tuṭṭfiwin ulint
@@ -652,7 +658,9 @@ listen-instruction = { $actionType } <playIcon></playIcon> ɣran-d akken iwata t
 listen-again-instruction = Igarrez uxeddim! <playIcon></playIcon> Sell-as tikelt-nniḍen ticki theggaḍ
 listen-3rd-time-instruction = 2 d akesser <playIcon></playIcon> , kemmel ar zdat!
 listen-last-time-instruction = <playIcon></playIcon> d aneggaru!
-nothing-to-validate = Ula kra ara nsentem deg tutlayt-a, mudd-aɣ-d afus ad neččaṛ adras.
+listen-empty-state = Ur nesɛi ara tukkisin ara nsenqed deg tutlayt-a...
+speak-empty-state = Ur nesɛi ara tifyar ara nsekles deg tutlayt-a...
+speak-empty-state-cta = Sumer-d tifyar
 record-button-label = Sekles taɣect-ik
 share-title-new = <bold>Mudd-aɣ-d afus</bold> ad d-naf tuɣac timaynutin
 keep-track-profile = rnu amaɣnu akken ad twaliḍ ayen txedmed

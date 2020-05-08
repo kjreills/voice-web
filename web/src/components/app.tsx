@@ -12,16 +12,17 @@ import {
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import * as Sentry from '@sentry/browser';
-import { UserClient } from 'common/user-clients';
+import * as FullStory from '@fullstory/browser';
+import * as Amplitude from 'amplitude-js';
+import { UserClient } from 'common';
 import store from '../stores/root';
 import URLS from '../urls';
 import {
-  isFirefoxFocus,
-  isMobileWebkit,
-  isNativeIOS,
+  isMobileSafari,
   isProduction,
   isStaging,
   replacePathLocale,
+  doNotTrack,
 } from '../utility';
 import {
   createBundleGenerator,
@@ -51,6 +52,11 @@ const ListenPage = React.lazy(() =>
 );
 const SpeakPage = React.lazy(() => import('./pages/contribution/speak/speak'));
 
+const SENTRY_FE_DSN =
+  'https://4a940c31e4e14d8fa6984e919a56b9fa@sentry.prod.mozaws.net/491';
+const FS_KEY = 'QDBTF';
+const AMPLITUDE_KEY = '';
+
 interface PropsFromState {
   api: API;
   account: UserClient;
@@ -70,7 +76,7 @@ interface LocalizedPagesProps
   extends PropsFromState,
     PropsFromDispatch,
     LocalePropsFromState,
-    RouteComponentProps<any> {
+    RouteComponentProps<any, any, any> {
   userLocales: string[];
 }
 
@@ -100,7 +106,7 @@ let LocalizedPage: any = class extends React.Component<
     this.props.refreshUser();
   }
 
-  async componentWillReceiveProps(nextProps: LocalizedPagesProps) {
+  async UNSAFE_componentWillReceiveProps(nextProps: LocalizedPagesProps) {
     const { account, addNotification, api, uploads, userLocales } = nextProps;
 
     this.runUploads(uploads).catch(e => console.error(e));
@@ -116,12 +122,11 @@ let LocalizedPage: any = class extends React.Component<
       await this.prepareBundleGenerator(nextProps);
     }
 
-    const award =
-      account && account.awards
-        ? account.awards.find(
-            a => !a.notification_seen_at && !this.seenAwardIds.includes(a.id)
-          )
-        : null;
+    const award = account?.awards
+      ? account.awards.find(
+          a => !a.notification_seen_at && !this.seenAwardIds.includes(a.id)
+        )
+      : null;
 
     if (award) {
       this.seenAwardIds.push(...account.awards.map(a => a.id));
@@ -180,6 +185,7 @@ let LocalizedPage: any = class extends React.Component<
     }
 
     if (!LOCALES.includes(mainLocale)) {
+      userLocales[0] = DEFAULT_LOCALE;
       this.props.setLocale(DEFAULT_LOCALE);
       history.replace(replacePathLocale(pathname, DEFAULT_LOCALE));
     } else {
@@ -317,26 +323,31 @@ class App extends React.Component {
   constructor(props: any, context: any) {
     super(props, context);
 
-    if (isNativeIOS()) {
-      this.bootstrapIOS();
-    }
-
-    if (isFirefoxFocus()) {
-      document.body.classList.add('focus');
-    }
-
-    if (isMobileWebkit()) {
+    if (isMobileSafari()) {
       document.body.classList.add('mobile-safari');
     }
 
     this.userLocales = negotiateLocales(navigator.languages);
 
     Sentry.init({
-      dsn:
-        'https://4a940c31e4e14d8fa6984e919a56b9fa@sentry.prod.mozaws.net/491',
+      dsn: SENTRY_FE_DSN,
       environment: isProduction() ? 'prod' : 'stage',
       release: process.env.GIT_COMMIT_SHA || null,
     });
+
+    if (isProduction() && !doNotTrack()) {
+      Amplitude.getInstance().init(AMPLITUDE_KEY, null, {
+        trackingOptions: {
+          carrier: false,
+          dma: false,
+          ip_address: false,
+        },
+      });
+
+      FullStory.init({
+        orgId: FS_KEY,
+      });
+    }
   }
 
   async componentDidMount() {
@@ -359,13 +370,6 @@ class App extends React.Component {
       Sentry.captureException(error);
     });
     this.setState({ Sentry });
-  }
-
-  /**
-   * Perform any native iOS specific operations.
-   */
-  private bootstrapIOS() {
-    document.body.classList.add('ios');
   }
 
   render() {

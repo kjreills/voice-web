@@ -68,6 +68,7 @@ hi-IN = Hindi
 hr = Horvát
 hsb = Szorb, felső
 hu = Magyar
+hy-AM = Örmény
 ia = Interlingva
 id = Indonéz
 is = Izlandi
@@ -75,6 +76,7 @@ it = Olasz
 izh = Izsór
 ja = Japán
 ka = Grúz
+kaa = Karakalpak
 kab = Kabil
 kbd = Kabardi
 kk = Kazak
@@ -126,6 +128,7 @@ ta = Tamil
 te = Telugu
 tg = Tádzsik
 th = Thai
+tl = Tagalog
 tr = Török
 tt = Tatár
 uby = Ubih
@@ -133,6 +136,7 @@ udm = Udmurt
 uk = Ukrán
 ur = Urdu
 uz = Üzbég
+vec = Velencei
 vi = Vietnámi
 vot = Vót
 zh-CN = Kínai (Kína)
@@ -236,7 +240,7 @@ whats-public = Mi nyilvános?
 email-not-public = Nem fogjuk nyilvánossá tenni az e-mail címét.
 recordings-and-locale-public = A felvételei száma, és a nyelvek amikben Ön közreműködik, nyilvánosak lesznek.
 username-optin-public = Kiválaszthatja, hogy a felhasználó neve nyilvános vagy privát legyen.
-demographic-deidentified = A benyújtott demográfiai adatok (pl. kor, nem, nyelv és akcentus), hangadatokból nem azonosíthatóak, és soha nem lesznek nyilvánosak a profilján.
+demographic-deidentified-clarity = Az opcionálisan benyújtott demográfiai adatok (például életkor, nem, nyelv és akcentus) sosem lesznek közzétéve a profilján, és nem lesznek összekapcsolva a fiókjával az adatkészletben. Az egyes hangklipeket a pontosabb elemzés céljából össze lesznek kapcsolva a demográfiai adatokkal – például egy kutató egy konkrét demográfiai szegmensre akarhat betanítani egy modellt.
 username-email-not-demographic = A felhasználóneve és az e-mail címe nem lesz társítva a közzétett adatokkal.
 
 ## Speak & Listen Shortcuts
@@ -449,11 +453,11 @@ about-partnership =
     
     A következő emberek és szervezetek segítségét szeretnénk megköszönni:
 about-get-involved = Csatlakozzon
-about-get-involved-text =
+about-get-involved-text-2 =
     Szeretné még jobbá tenni a Common Voice-ot?
-    Nagyszerű! Lépjen velünk kapcsolatba e-mailben vagy a <discourseLink>Discourse-on</discourseLink>,
-    küldjön visszajelzést a <githubLink>GitHubon</githubLink>,
-    vagy csatlakozzon hozzánk a <slackLink>Slacken</slackLink>.
+    Nagyszerű! Lépjen velünk kapcsolatba e-mailben vagy a <discourseLink>Discourse</discourseLink>
+    fórumon, küldjön be hibákat <githubLink>GitHubon</githubLink>,
+    vagy csatlakozzon a <matrixLink>Matrix</matrixLink> közösségi csevegéshez.
 about-nav-why-common-voice = Miért?
 about-nav-how-it-works = Hogyan?
 about-nav-partners = Partnerek
@@ -628,7 +632,7 @@ contribute-more = Készen áll még { $count } felvételre?
 record-cta = Felvétel indítása
 record-platform-not-supported = Sajnáljuk, de a platformja jelenleg nem támogatott.
 record-platform-not-supported-desktop = Asztali számítógépekre, letöltheti a legfrissebbet:
-record-platform-not-supported-ios = Az <bold>iOS</bold> felhasználók letölthetik szabad szoftver alkalmazásunkat:
+record-platform-not-supported-ios-non-safari = iOS-en folytassa a Safarival a felvétel engedélyezéséhez…
 record-must-allow-microphone = Engedélyezni kell a mikrofon hozzáférést.
 record-no-mic-found = Nem található mikrofon.
 record-error-too-short = A felvétel túl rövid volt.
@@ -642,6 +646,8 @@ record-again-instruction = Nagyszerű! <recordIcon></recordIcon> A következő k
 record-again-instruction2 = Csak így tovább, vegyen fel újra <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Az utolsó!
 review-tooltip = Ellenőrizze, és ha kell, vegye fel újra a klipeket sorban
+share-clip = Ossza meg a klipjét
+share-common-voice = A Common Voice megosztása
 review-instruction = Ellenőrizze, és ha kell, vegye fel újra a klipeket
 record-submit-tooltip = { $actionType } a beküldéshez, ha kész
 clips-uploaded = Klipek feltöltve
@@ -654,7 +660,9 @@ listen-instruction = { $actionType } a <playIcon></playIcon> ikonra, pontosan ol
 listen-again-instruction = Jó munka! <playIcon></playIcon> Hallgassa meg újra, ha kész
 listen-3rd-time-instruction = 2 kész <playIcon></playIcon>, csak így tovább!
 listen-last-time-instruction = <playIcon></playIcon> Utolsó!
-nothing-to-validate = Még nincs semmit ellenőrizni ezen a nyelven, segítsen feltölteni a sort.
+listen-empty-state = Elfogytak az ellenőrzésre váró klipek ezen a nyelven…
+speak-empty-state = Elfogytak az felvételre váró mondatok ezen a nyelven…
+speak-empty-state-cta = Mondatok hozzáadása
 record-button-label = Rögzítse a hangját
 share-title-new = <bold>Segítsen nekünk</bold> további hangokat találni
 keep-track-profile = Kövesse nyomon az előrehaladását egy profil segítségével

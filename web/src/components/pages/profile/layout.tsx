@@ -4,7 +4,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { UserClient } from 'common/user-clients';
+import { UserClient } from 'common';
 import { User } from '../../../stores/user';
 import StateTree from '../../../stores/tree';
 import URLS from '../../../urls';
@@ -38,7 +38,7 @@ const Layout = ({ toLocaleRoute, user }: Props) => {
     URLS.PROFILE_AVATAR,
     URLS.PROFILE_SETTINGS,
     URLS.PROFILE_DELETE,
-    URLS.PROFILE_DOWNLOAD
+    URLS.PROFILE_DOWNLOAD,
   ].map(r => toLocaleRoute(r));
   return (
     <div className="profile-layout">

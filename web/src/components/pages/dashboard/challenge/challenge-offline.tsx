@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { LocaleLink } from '../../../locale-helpers';
-import { ChallengeDuration } from 'common/challenge';
+import { ChallengeDuration } from 'common';
 import { isBeforeChallenge } from './constants';
 import { LinkButton } from '../../../ui/ui';
 import URLS from '../../../../urls';
@@ -13,12 +13,12 @@ import './challenge-offline.css';
 function ChallengeOffline({
   duration,
   location,
-}: { duration: ChallengeDuration } & RouteComponentProps<any>) {
+}: { duration: ChallengeDuration } & RouteComponentProps<any, any, any>) {
   const addAchievement = useAction(Notifications.actions.addAchievement);
   const dateFormat = { year: 'numeric', month: 'short', day: 'numeric' };
 
   useEffect(() => {
-    if (isBeforeChallenge && location.state && location.state.earlyEnroll) {
+    if (isBeforeChallenge && location.state?.earlyEnroll) {
       addAchievement(
         50,
         'Bonus! You signed up in time for some extra points.',

@@ -4,28 +4,34 @@ import {
   withLocalization,
 } from 'fluent-react/compat';
 import * as React from 'react';
+import BalanceText from 'react-balance-text';
 import { connect } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
 const NavigationPrompt = require('react-router-navigation-prompt').default;
 import { Locale } from '../../../../stores/locale';
 import { Notifications } from '../../../../stores/notifications';
 import { Sentences } from '../../../../stores/sentences';
+import { Sentence as SentenceType } from 'common';
 import StateTree from '../../../../stores/tree';
 import { Uploads } from '../../../../stores/uploads';
 import { User } from '../../../../stores/user';
 import API from '../../../../services/api';
-import { trackRecording } from '../../../../services/tracker';
+import { trackRecording, getTrackClass } from '../../../../services/tracker';
 import URLS from '../../../../urls';
-import {
-  localeConnector,
-  LocaleLink,
-  LocalePropsFromState,
-} from '../../../locale-helpers';
+import { localeConnector, LocalePropsFromState } from '../../../locale-helpers';
 import Modal, { ModalButtons } from '../../../modal/modal';
 import TermsModal from '../../../terms-modal';
-import { CheckIcon, FontIcon, MicIcon, StopIcon } from '../../../ui/icons';
-import { Button, TextButton } from '../../../ui/ui';
-import { getItunesURL, isFirefoxFocus, isNativeIOS } from '../../../../utility';
+import {
+  CheckIcon,
+  MicIcon,
+  StopIcon,
+  ArrowRight,
+  FirefoxColor,
+  ChromeColor,
+  SafariColor,
+} from '../../../ui/icons';
+import { Button, TextButton, LinkButton } from '../../../ui/ui';
+import { isIOS, isMobileSafari } from '../../../../utility';
 import ContributionPage, {
   ContributionPillProps,
   SET_COUNT,
@@ -34,7 +40,6 @@ import {
   RecordButton,
   RecordingStatus,
 } from '../../../primary-buttons/primary-buttons';
-import AudioIOS from './audio-ios';
 import AudioWeb, { AudioError, AudioInfo } from './audio-web';
 import RecordingPill from './recording-pill';
 import { SentenceRecording } from './sentence-recording';
@@ -52,31 +57,72 @@ enum RecordingError {
 }
 
 const UnsupportedInfo = () => (
-  <div className="unsupported">
-    <Localized id="record-platform-not-supported">
-      <h2 />
-    </Localized>
-    <p key="desktop">
-      <Localized id="record-platform-not-supported-desktop">
+  <div className="empty-container">
+    <div className="error-card card-dimensions unsupported">
+      {isIOS() && !isMobileSafari() ? (
+        <>
+          <BalanceText>
+            <Localized id="record-platform-not-supported-ios-non-safari" />
+          </BalanceText>
+          <SafariColor />
+        </>
+      ) : (
+        <>
+          <BalanceText>
+            <Localized id="record-platform-not-supported" />
+          </BalanceText>
+          <p className="desktop">
+            <Localized id="record-platform-not-supported-desktop">
+              <BalanceText />
+            </Localized>
+          </p>
+          <div>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.firefox.com/"
+              title="Firefox">
+              <FirefoxColor />
+            </a>{' '}
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.google.com/chrome"
+              title="Chrome">
+              <ChromeColor />
+            </a>
+          </div>
+        </>
+      )}
+    </div>
+  </div>
+);
+
+const NoSentencesAvailable = () => (
+  <div className="empty-container">
+    <div className="error-card card-dimensions no-sentences-available">
+      <Localized id="speak-empty-state">
         <span />
       </Localized>
-      <a target="_blank" href="https://www.firefox.com/">
-        <FontIcon type="firefox" />
-        Firefox
-      </a>{' '}
-      <a target="_blank" href="https://www.google.com/chrome">
-        <FontIcon type="chrome" />
-        Chrome
-      </a>
-    </p>
+      <LinkButton
+        rounded
+        blank
+        href="https://common-voice.github.io/sentence-collector/">
+        <ArrowRight className="speak-sc-icon" />{' '}
+        <Localized id="speak-empty-state-cta">
+          <span />
+        </Localized>
+      </LinkButton>
+    </div>
   </div>
 );
 
 interface PropsFromState {
   api: API;
   locale: Locale.State;
-  sentences: Sentences.Sentence[];
+  sentences: SentenceType[];
   user: User.State;
+  isLoading: boolean;
 }
 
 interface PropsFromDispatch {
@@ -94,7 +140,7 @@ interface Props
     LocalizationProps,
     PropsFromState,
     PropsFromDispatch,
-    RouteComponentProps<any> {}
+    RouteComponentProps<any, any, any> {}
 
 interface State {
   clips: SentenceRecording[];
@@ -119,7 +165,7 @@ const initialState: State = {
 class SpeakPage extends React.Component<Props, State> {
   state: State = initialState;
 
-  audio: AudioWeb | AudioIOS;
+  audio: AudioWeb;
   isUnsupportedPlatform = false;
   maxVolume = 0;
   recordingStartTime = 0;
@@ -154,7 +200,7 @@ class SpeakPage extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.audio = isNativeIOS() ? new AudioIOS() : new AudioWeb();
+    this.audio = new AudioWeb();
     this.audio.setVolumeCallback(this.updateVolume.bind(this));
 
     document.addEventListener('visibilitychange', this.releaseMicrophone);
@@ -162,8 +208,7 @@ class SpeakPage extends React.Component<Props, State> {
 
     if (
       !this.audio.isMicrophoneSupported() ||
-      !this.audio.isAudioRecordingSupported() ||
-      isFirefoxFocus()
+      !this.audio.isAudioRecordingSupported()
     ) {
       this.isUnsupportedPlatform = true;
     }
@@ -256,9 +301,7 @@ class SpeakPage extends React.Component<Props, State> {
   };
 
   private updateVolume = (volume: number) => {
-    // For some reason, volume is always exactly 100 at the end of the
-    // recording, even if it is silent; so ignore that.
-    if (volume !== 100 && volume > this.maxVolume) {
+    if (volume > this.maxVolume) {
       this.maxVolume = volume;
     }
   };
@@ -302,7 +345,6 @@ class SpeakPage extends React.Component<Props, State> {
       this.recordingStartTime = Date.now();
       this.recordingStopTime = 0;
       this.setState({
-        // showSubmitSuccess: false,
         recordingStatus: 'recording',
         error: null,
       });
@@ -337,7 +379,7 @@ class SpeakPage extends React.Component<Props, State> {
   };
 
   private handleSkip = async () => {
-    const { api, removeSentences, sentences } = this.props;
+    const { api, removeSentences } = this.props;
     const { clips } = this.state;
     await this.discardRecording();
     const current = this.getRecordingIndex();
@@ -449,12 +491,12 @@ class SpeakPage extends React.Component<Props, State> {
         trackRecording('submit', locale);
         refreshUser();
         addNotification(
-          <React.Fragment>
+          <>
             <CheckIcon />{' '}
             <Localized id="clips-uploaded">
               <span />
             </Localized>
-          </React.Fragment>
+          </>
         );
       },
     ]);
@@ -476,6 +518,21 @@ class SpeakPage extends React.Component<Props, State> {
       showPrivacyModal: false,
       showDiscardModal: !this.state.showDiscardModal,
     });
+  };
+
+  private displayError = () => {
+    return (
+      this.isUnsupportedPlatform ||
+      (!this.props.isLoading && this.state.clips.length == 0)
+    );
+  };
+
+  private returnSpeakError = () => {
+    return this.isUnsupportedPlatform ? (
+      <UnsupportedInfo />
+    ) : (
+      <NoSentencesAvailable />
+    );
   };
 
   private resetAndGoHome = () => {
@@ -501,8 +558,9 @@ class SpeakPage extends React.Component<Props, State> {
       showDiscardModal,
     } = this.state;
     const recordingIndex = this.getRecordingIndex();
+
     return (
-      <React.Fragment>
+      <>
         <NavigationPrompt
           when={clips.filter(clip => clip.recording).length > 0}>
           {({ onConfirm, onCancel }: any) => (
@@ -518,17 +576,26 @@ class SpeakPage extends React.Component<Props, State> {
                   <Button
                     outline
                     rounded
+                    className={getTrackClass('fs', 'exit-submit-clips')}
                     onClick={() => {
                       if (this.upload()) onConfirm();
                     }}
                   />
                 </Localized>
                 <Localized id="record-abort-continue">
-                  <Button outline rounded onClick={onCancel} />
+                  <Button
+                    outline
+                    rounded
+                    className={getTrackClass('fs', 'exit-continue-recording')}
+                    onClick={onCancel}
+                  />
                 </Localized>
               </ModalButtons>
               <Localized id="record-abort-delete">
-                <TextButton onClick={onConfirm} />
+                <TextButton
+                  className={getTrackClass('fs', 'exit-delete-clips')}
+                  onClick={onConfirm}
+                />
               </Localized>
             </Modal>
           )}
@@ -551,7 +618,7 @@ class SpeakPage extends React.Component<Props, State> {
         )}
         <ContributionPage
           activeIndex={recordingIndex}
-          errorContent={this.isUnsupportedPlatform && <UnsupportedInfo />}
+          errorContent={this.displayError() && this.returnSpeakError()}
           instruction={props =>
             error ? (
               <div className="error">
@@ -594,6 +661,7 @@ class SpeakPage extends React.Component<Props, State> {
           onSubmit={() => this.upload()}
           primaryButtons={
             <RecordButton
+              trackClass="speak-record"
               status={recordingStatus}
               onClick={this.handleRecordClick}
             />
@@ -645,17 +713,20 @@ class SpeakPage extends React.Component<Props, State> {
           ]}
           type="speak"
         />
-      </React.Fragment>
+      </>
     );
   }
 }
 
 const mapStateToProps = (state: StateTree) => {
+  const { sentences, isLoading } = Sentences.selectors.localeSentences(state);
+
   return {
     api: state.api,
     locale: state.locale,
-    sentences: Sentences.selectors.localeSentences(state),
+    sentences,
     user: state.user,
+    isLoading,
   };
 };
 

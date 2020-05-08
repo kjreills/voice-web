@@ -128,7 +128,7 @@ class UnconnectedLeaderboard extends React.Component<Props, State> {
     );
   }
 
-  playAvatarClip = function(clipUrl: string, position: any, self: boolean) {
+  playAvatarClip = function (clipUrl: string, position: any, self: boolean) {
     const { locale } = this.props;
     trackVoiceAvatar(self ? 'self-listen' : 'listen', locale);
 
@@ -255,13 +255,13 @@ class UnconnectedLeaderboard extends React.Component<Props, State> {
           <div className="username" title={row.username}>
             {row.username || '???'}
             {row.you && (
-              <React.Fragment>
+              <>
                 {' ('}
                 <Localized id="you">
                   <span />
                 </Localized>
                 )
-              </React.Fragment>
+              </>
             )}
           </div>
           {playingClipIndex === row.position && (
@@ -347,7 +347,7 @@ export default function LeaderboardCard() {
       title="top-contributors"
       iconButtons={
         <div className="icon-buttons">
-          {Boolean(account && account.visible) && (
+          {Boolean(account?.visible) && (
             <>
               <button
                 type="button"

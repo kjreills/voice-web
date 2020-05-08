@@ -68,6 +68,7 @@ hi-IN = hindi
 hr = chorwacki
 hsb = górnołużycki
 hu = węgierski
+hy-AM = ormiański
 ia = interlingua
 id = indonezyjski
 is = islandzki
@@ -75,6 +76,7 @@ it = włoski
 izh = iżorski
 ja = japoński
 ka = gruziński
+kaa = karakałpacki
 kab = kabylski
 kbd = kabardyjski
 kk = kazachski
@@ -126,6 +128,7 @@ ta = tamilski
 te = telugu
 tg = tadżycki
 th = tajski
+tl = tagalski
 tr = turecki
 tt = tatarski
 uby = ubyski
@@ -133,6 +136,7 @@ udm = udmurcki
 uk = ukraiński
 ur = urdu
 uz = uzbecki
+vec = wenecki
 vi = wietnamski
 vot = wotycki
 zh-CN = chiński (Chiny)
@@ -233,7 +237,7 @@ whats-public = Co jest publiczne?
 email-not-public = Twój adres e-mail nie będzie dostępny publicznie.
 recordings-and-locale-public = Liczba nagrań i języki, w których uczestniczysz, będą publiczne.
 username-optin-public = Możesz ustawić swoją nazwę użytkownika jako publiczną lub anonimową.
-demographic-deidentified = Opcjonalnie przesłane dane demograficzne (np. wiek, płeć, język i akcent) są anonimizowane z przesłanych danych głosowych i nigdy nie zostaną upublicznione w Twoim profilu.
+demographic-deidentified-clarity = Opcjonalnie wysłane dane demograficzne (np. wiek, płeć, język i akcent) nigdy nie będą publiczne w profilu użytkownika i nie będą powiązane z kontem w zbiorze danych. Poszczególne nagrania dźwiękowe będą powiązane z danymi demograficznymi w celu dokładniejszej analizy — na przykład naukowiec może chcieć ukierunkować model szkoleniowy na konkretny segment demograficzny.
 username-email-not-demographic = Twoja nazwa użytkownika i adres e-mail nie będą powiązane z opublikowanymi danymi.
 
 ## Speak & Listen Shortcuts
@@ -450,10 +454,11 @@ about-partnership =
     
     Chcielibyśmy podziękować następującym osobom i organizacjom za pomoc przy projekcie:
 about-get-involved = Dołącz do nas
-about-get-involved-text =
+about-get-involved-text-2 =
     Chcesz pomóc jeszcze bardziej ulepszyć projekt Common Voice?
     Wspaniale! Skontaktuj się z nami przez e-mail lub serwis <discourseLink>Discourse</discourseLink>,
-    prześlij opinię przez <githubLink>GitHub</githubLink> lub dołącz do nas w aplikacji <slackLink>Slack</slackLink>.
+    zgłoś problem ze stroną w serwisie <githubLink>GitHub</githubLink> lub dołącz
+    do pokoju rozmów społeczności w sieci <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Dlaczego?
 about-nav-how-it-works = Jak?
 about-nav-partners = Partnerzy
@@ -626,9 +631,9 @@ goal-help-recording = Twój udział pomógł projektowi Common Voice osiągnąć
 goal-help-validation = Twój udział pomógł projektowi Common Voice osiągnąć <goalPercentage></goalPercentage> dziennego celu weryfikowania ({ $goalValue })!
 contribute-more = Zrobimy jeszcze { $count }?
 record-cta = Zacznij nagrywanie
-record-platform-not-supported = Przepraszamy, używana platforma nie jest obecnie obsługiwana.
+record-platform-not-supported = Przepraszamy, używany system nie jest obecnie obsługiwany.
 record-platform-not-supported-desktop = Na komputerze można pobrać najnowszą wersję:
-record-platform-not-supported-ios = Użytkownicy <bold>iOS</bold> mogą pobrać bezpłatną aplikację:
+record-platform-not-supported-ios-non-safari = W systemie iOS kontynuuj za pomocą przeglądarki Safari, aby umożliwić nagrywanie…
 record-must-allow-microphone = Musisz zezwolić na dostęp do mikrofonu.
 record-no-mic-found = Nie odnaleziono mikrofonu.
 record-error-too-short = Nagranie jest za krótkie.
@@ -642,6 +647,8 @@ record-again-instruction = Świetnie! <recordIcon></recordIcon> Nagraj następne
 record-again-instruction2 = Tak trzymaj, nagraj jeszcze raz <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Ostatnie!
 review-tooltip = Weryfikuj i ponownie nagrywaj w czasie pracy
+share-clip = Udostępnij swoje nagranie
+share-common-voice = Udostępnij projekt Common Voice
 review-instruction = Weryfikuj i ponownie nagrywaj w razie potrzeby
 record-submit-tooltip = { $actionType } „Wyślij” po ukończeniu
 clips-uploaded = Wysłano nagrania
@@ -654,7 +661,9 @@ listen-instruction = { $actionType } <playIcon></playIcon> czy poprawnie wymówi
 listen-again-instruction = Świetna robota! <playIcon></playIcon> Odsłuchaj ponownie
 listen-3rd-time-instruction = Dwa zrobione <playIcon></playIcon>, tak trzymaj!
 listen-last-time-instruction = <playIcon></playIcon> Ostatnie!
-nothing-to-validate = Nie mamy nic do zweryfikowania w tym języku, pomóż nam wypełnić kolejkę.
+listen-empty-state = Skończyły się nagrania do sprawdzenia w tym języku…
+speak-empty-state = Skończyły się zdania do nagrania w tym języku…
+speak-empty-state-cta = Dodaj więcej zdań
 record-button-label = Nagraj swój głos
 share-title-new = <bold>Pomóż nam</bold> znaleźć więcej głosów
 keep-track-profile = Śledź swoje postępy za pomocą profilu

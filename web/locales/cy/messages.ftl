@@ -68,6 +68,7 @@ hi-IN = Hindi
 hr = Croatieg
 hsb = Sorbeg Uwch
 hu = Hwngareg
+hy-AM = Armeneg
 ia = Interlingua
 id = Indoneseg
 is = Eislandeg
@@ -75,6 +76,7 @@ it = Eidaleg
 izh = Izhorieg
 ja = Japanëeg
 ka = Georgeg
+kaa = Karakalpak
 kab = Kabyle
 kbd = Kabardieg
 kk = Casac
@@ -126,6 +128,7 @@ ta = Tamil
 te = Telugu
 tg = Tajik
 th = Thai
+tl = Tagalog
 tr = Twrceg
 tt = Tartareg
 uby = Ubykh
@@ -133,6 +136,7 @@ udm = Udmurt
 uk = Wcraneg
 ur = Urdu
 uz = Wsbeceg
+vec = Venetieg
 vi = Fietnameg
 vot = Votig
 zh-CN = Tsieinëeg (Tsiena)
@@ -244,7 +248,7 @@ whats-public = Beth sy'n Gyhoeddus?
 email-not-public = Fyddwn ni ddim yn gwneud eich e-bost yn gyhoeddus.
 recordings-and-locale-public = Bydd y nifer o recordiadau a pha ieithoedd rydych yn cyfrannu atyn nhw yn gyhoeddus.
 username-optin-public = Gallwch ddewis gwneud eich enw defnyddiwr yn gyhoeddus neu'n anhysbys.
-demographic-deidentified = Bydd data demograffig rydych wedi dewis ei gyflwyno (e.e. oed, rhyw, iaith ac acen) yn cael ei ddadadnabod o'ch data llais rydych wedi ei gyflwyno ac ni fydd yn cael ei wneud yn gyhoeddus ar eich proffil.
+demographic-deidentified-clarity = Fydd data demograffig sy'n cael ei gynnig o ran dewis (e.e. oedran, rhyw, iaith, ac acen) byth yn cael ei gyhoeddi ar eich proffil, a fyddan nhw ddim yn gysylltiedig â'ch cyfrif yn y set ddata. Bydd clipiau sain unigol yn gysylltiedig â data demograffig at ddibenion dadansoddiad mwy cywir - er enghraifft, efallai y bydd ymchwilydd eisiau targedu model hyfforddi at segment demograffig penodol.
 username-email-not-demographic = Ni fydd eich enw defnyddiwr na'ch e-bost yn cael ei gysylltu â'r data sy'n cael ei gyhoeddi.
 
 ## Speak & Listen Shortcuts
@@ -463,11 +467,11 @@ about-partnership =
     
     Hoffem ddiolch i'r bobl a'r sefydliadau canlynol am eu cymorth gyda'r prosiect:
 about-get-involved = Ymunwch
-about-get-involved-text =
-    Eisiau helpu i wneud Common Voice hyd yn oed yn well?
+about-get-involved-text-2 =
+    Eisiau helpu i wneud Common Voice well fyth?
     Gwych! Cysylltwch trwy e-bost neu ar <discourseLink>Discource</discourseLink>,
-    cyflwyno adborth trwy <githubLink>GitHub</githubLink>,
-    neu ymunwch â ni ar <slackLink>Slack</slackLink>.
+    cyflwynwch adborth trwy <githubLink>GitHub</githubLink>, neu ymuno â ni
+    ar lwyfan sgwrsio cymdeithasol <matrixLink>Matrix</matrixLink>
 about-nav-why-common-voice = Pam ?
 about-nav-how-it-works = Sut ?
 about-nav-partners = Partneriaid
@@ -642,7 +646,7 @@ contribute-more = Barod i wneud { $count } yn rhagor?
 record-cta = Cychwyn recordio
 record-platform-not-supported = Ymddiheuriadau ond nid yw eich platfform yn cael ei gynnal ar hyn o bryd.
 record-platform-not-supported-desktop = Ar gyfrifiaduron bwrdd gwaith, gallwch lwytho i lawr y diweddaraf:
-record-platform-not-supported-ios = Gall defnyddwyr <bold>iOS</bold> lwytho i lawr ein ap am ddim:
+record-platform-not-supported-ios-non-safari = Ar iOS parhewch gyda Safari i alluogi recordio…
 record-must-allow-microphone = Rhaid i chi ganiatáu mynediad i'r meicroffon.
 record-no-mic-found = Heb ganfod meicroffon.
 record-error-too-short = Roedd y recordiad yn rhy fyr.
@@ -656,6 +660,8 @@ record-again-instruction = Gwych! <recordIcon></recordIcon> Recordiwch eich clip
 record-again-instruction2 = Daliwch ati, recordiwch eto <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Yr un olaf!
 review-tooltip = Adolygu ac ail recordio clipiau yma wrth fynd
+share-clip = Rhannwch eich clip
+share-common-voice = Rhannu Common Voice
 review-instruction = Adolygu ac ail recordio clipiau os oes angen
 record-submit-tooltip = { $actionType } cyflwyno pan yn barod
 clips-uploaded = Clipiau Wedi'u Llwytho
@@ -668,7 +674,9 @@ listen-instruction = { $actionType }<playIcon></playIcon> os ydyn nhw wedi yngan
 listen-again-instruction = Da iawn! <playIcon> </playIcon> Gwrandewch eto pan fyddwch yn barod
 listen-3rd-time-instruction = 2 i lawr <playIcon> </playIcon> , daliwch ati!
 listen-last-time-instruction = <playIcon> </playIcon> Yr un olaf!
-nothing-to-validate = Nid oes gennym unrhyw beth i'w ddilysu yn yr iaith hon, helpwch ni i lanw'r ciw.
+listen-empty-state = Does dim rhagor o glipiau i ddilysu yn yr iaith hon...
+speak-empty-state = Does dim rhagor o o frawddegau i'w recordio yn yr iaith hon...
+speak-empty-state-cta = Cyfrannu brawddegau
 record-button-label = Recordio eich llais
 share-title-new = <bold>Helpwch ni</bold> i ganfod rhagor o leisiau
 keep-track-profile = Cadwch olwg ar eich cynnydd gyda phroffil

@@ -3,19 +3,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps, Redirect, withRouter } from 'react-router';
 import { LOCALES, NATIVE_NAMES } from '../../services/localization';
-import { trackGlobal } from '../../services/tracker';
+import { trackGlobal, getTrackClass } from '../../services/tracker';
 import StateTree from '../../stores/tree';
 import { User } from '../../stores/user';
 import { Locale } from '../../stores/locale';
 import URLS from '../../urls';
-import {
-  getItunesURL,
-  isIOS,
-  isNativeIOS,
-  isSafari,
-  isProduction,
-  replacePathLocale,
-} from '../../utility';
+import { isProduction, replacePathLocale } from '../../utility';
 import { LocaleLink, LocaleNavLink } from '../locale-helpers';
 import {
   CogIcon,
@@ -38,7 +31,7 @@ import {
   challengeTeamTokens,
   ChallengeToken,
   challengeTokens,
-} from 'common/challenge';
+} from 'common';
 
 const LOCALES_WITH_NAMES = LOCALES.map(code => [
   code,
@@ -57,7 +50,7 @@ interface PropsFromDispatch {
 interface LayoutProps
   extends PropsFromState,
     PropsFromDispatch,
-    RouteComponentProps<any> {}
+    RouteComponentProps<any, any, any> {}
 
 interface LayoutState {
   challengeTeamToken: ChallengeTeamToken;
@@ -134,22 +127,6 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
     }
   }
 
-  /**
-   * If the iOS app is installed, open it. Otherwise, open the App Store.
-   */
-  private openInApp = () => {
-    // TODO: Enable custom protocol when we publish an ios app update.
-    // window.location.href = 'commonvoice://';
-
-    window.location.href = getItunesURL();
-  };
-
-  private closeOpenInApp = (evt: React.MouseEvent<HTMLElement>) => {
-    evt.stopPropagation();
-    evt.preventDefault();
-    this.installApp.classList.add('hide');
-  };
-
   lastScrollTop: number;
   private handleScroll = () => {
     const { scrollTop } = this.scroller;
@@ -202,10 +179,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
     });
 
     const alreadyEnrolled =
-      this.state.showWelcomeModal &&
-      user.account &&
-      user.account.enrollment &&
-      user.account.enrollment.challenge;
+      this.state.showWelcomeModal && user.account?.enrollment?.challenge;
     const redirectURL = URLS.DASHBOARD + URLS.CHALLENGE;
 
     return (
@@ -223,11 +197,15 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
         {showStagingBanner && (
           <div className="staging-banner">
             You're on the staging server. Voice data is not collected here.{' '}
-            <a href="https://voice.mozilla.org" target="_blank">
+            <a
+              href="https://voice.mozilla.org"
+              target="_blank"
+              rel="noopener noreferrer">
               Don't waste your breath.
             </a>{' '}
             <a
               href="https://github.com/mozilla/voice-web/issues/new"
+              rel="noopener noreferrer"
               target="_blank">
               Feel free to report issues.
             </a>{' '}
@@ -327,7 +305,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
                 </div>
               )}
               {!isBuildingProfile && (
-                <React.Fragment>
+                <>
                   {user.account ? (
                     <Localized id="logout">
                       <LinkButton rounded href="/logout" />
@@ -337,7 +315,7 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
                       <LinkButton rounded href="/login" />
                     </Localized>
                   )}
-                </React.Fragment>
+                </>
               )}
             </div>
           </Nav>
@@ -350,7 +328,11 @@ class Layout extends React.PureComponent<LayoutProps, LayoutState> {
     const { user } = this.props;
     return (
       <LocaleLink
-        className="tallies"
+        className={[
+          'tallies',
+          getTrackClass('fs', 'menubar-cta'),
+          user.account ? getTrackClass('fs', 'logged-in') : '',
+        ].join(' ')}
         to={user.account ? URLS.DASHBOARD : URLS.SPEAK}>
         <div className="record-tally">
           <MicIcon />

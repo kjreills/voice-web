@@ -68,6 +68,7 @@ hi-IN = Hindština
 hr = Chorvatština
 hsb = Hornosrbština
 hu = Maďarština
+hy-AM = Arménština
 ia = Interlingua
 id = Indonéština
 is = Islandština
@@ -75,6 +76,7 @@ it = Italština
 izh = Ižorština
 ja = Japonština
 ka = Gruzínština
+kaa = Karakalpačtina
 kab = Kabylština
 kbd = Kabardština
 kk = Kazaština
@@ -126,6 +128,7 @@ ta = Tamilština
 te = Telugština
 tg = Tádžičtina
 th = Thajština
+tl = Tagalština
 tr = Turečtina
 tt = Tatarština
 uby = Ubychština
@@ -133,6 +136,7 @@ udm = Udmurtština
 uk = Ukrajinština
 ur = Urdština
 uz = Uzbečtina
+vec = Benátština
 vi = Vietnamština
 vot = Votština
 zh-CN = Čínština (Čína)
@@ -233,7 +237,7 @@ whats-public = Co vše zveřejňujeme?
 email-not-public = Vaši e-mailovou adresu nezveřejníme.
 recordings-and-locale-public = Zveřejníme, kolik příspěvků a do jakých jazyků jste učinili.
 username-optin-public = Můžete si zvolit, jestli zveřejníme vaše uživatelské jméno.
-demographic-deidentified = Dobrovolně poskytnuté demografické údaje (tj. věk, pohlaví a přízvuk) jsou anonymizovány a nikdy nebudou zveřejněny na vašem profilu.
+demographic-deidentified-clarity = Volitelně nahraná demografická data (např. věk, pohlaví, jazyk nebo přízvuk) nebudou na vašem profilu zveřejněny a nebudou ani spojeny s vaším účtem v datasetu. Jednotlivé nahrávky budou s demografickými daty spojeny za účelem přesnější analýzy, např. aby mohl výzkumný pracovník soustředit učení modelu na konkrétní demografickou skupinu.
 username-email-not-demographic = Vaše uživatelské jméno a e-mail nebudou nijak propojovány s vámi poskytnutými hlasovými daty.
 
 ## Speak & Listen Shortcuts
@@ -450,11 +454,11 @@ about-partnership =
     
     Rádi bychom poděkovali následujícím lidem a organizacím za jejich pomoc:
 about-get-involved = Zapojte se
-about-get-involved-text =
+about-get-involved-text-2 =
     Chcete pomoci projekt Common Voice dále zlepšovat?
     Skvěle! Spojte se s námi prostřednictvím e-mailu nebo na <discourseLink>Discourse</discourseLink>,
-    odešlete zpětnou vazbu skrz <githubLink>GitHub</githubLink>,
-    nebo se připojte na náš <slackLink>Slack</slackLink>.
+    pošlete nám zpětnou vazbu skrze <githubLink>GitHub</githubLink>,
+    nebo se připojte na náš komunitní chat <matrixLink>Matrix</matrixLink>.
 about-nav-why-common-voice = Proč?
 about-nav-how-it-works = Jak?
 about-nav-partners = Partneři
@@ -474,7 +478,7 @@ localization-explanation = Toto je náš postup pro překlad a a adaptaci našeh
 sentence-collection = Sbírka vět
 sentence-collection-explanation = Sběr vět ve veřejné doméně, nebo tvorba nových vět ve veřejné doméně.
 hours-recorded-explanation = Počet hlasových nahrávek, které jsme doposud sesbírali.
-hours-validated-explanation = Počet hlasových nahrávek, které byly validovány alespoň dvěma ze tří uživatelů prostřednictvím hlasu pro "Ano". Tyto nahrávky jsou započítávány do postupu k celkovému cíli projektu sesbírat 10 000 hodin záznamů.
+hours-validated-explanation = Počet hlasových nahrávek ověřených alespoň dvěma ze tří uživatelů prostřednictvím hlasu pro "Ano". Tyto nahrávky se započítávají do postupu k celkovému cíli projektu sesbírat 10 000 hodin záznamů.
 sst = Převod řeči na text (STT)
 sst-explanation = Technologie převodu řeči na text (STT) převádí hlasová data na text.
 de-identified = De-identifikováno
@@ -634,7 +638,7 @@ contribute-more =
 record-cta = Spustit nahrávání
 record-platform-not-supported = Je nám líto, ale vaše platforma zatím není podporovaná.
 record-platform-not-supported-desktop = Na počítačích si můžete stáhnout nejnovější:
-record-platform-not-supported-ios = Uživatelé <bold>iOS</bold> si mohou zdarma stáhnout naši aplikaci:
+record-platform-not-supported-ios-non-safari = V systému iOS použijte pro nahrávání prohlížeč Safari…
 record-must-allow-microphone = Musíte povolit přístup k mikrofonu.
 record-no-mic-found = Mikrofon nebyl nalezen.
 record-error-too-short = Nahrávka byla příliš krátká.
@@ -648,6 +652,8 @@ record-again-instruction = Skvělé! <recordIcon></recordIcon> Nahrajte váš da
 record-again-instruction2 = Jen tak dál, pokračujte v nahrávání <recordIcon></recordIcon>
 record-last-instruction = <recordIcon></recordIcon> Poslední!
 review-tooltip = Zde zkontrolujte nahrávky a nahrajte je znovu
+share-clip = Sdílejte svou nahrávku
+share-common-voice = Sdílejte Common voice
 review-instruction = Zkontrolujte nahrávky a nahrajte je znovu, pokud to bude potřeba
 record-submit-tooltip = { $actionType } odeslat, až bude připraveno
 clips-uploaded = Nahrávky byly uloženy
@@ -660,7 +666,9 @@ listen-instruction = { $actionType } <playIcon></playIcon> byla věta nahrána p
 listen-again-instruction = Skvělá práce!<playIcon></playIcon> Až budete připraveni, můžete poslouchat znova
 listen-3rd-time-instruction = 2 máte za sebou, jen tak dál! <playIcon></playIcon>
 listen-last-time-instruction = <playIcon></playIcon>Poslední!
-nothing-to-validate = V tomto jazyce nemáme nic ke kontrole, pomozte nám naplnit frontu.
+listen-empty-state = Nahrávky ve vašem jazyce, které byste ještě mohli ověřovat, nám už bohužel došly...
+speak-empty-state = Věty, které byste mohli ve vašem jazyce nahrát, nám už bohužel došly...
+speak-empty-state-cta = Přidejte další věty
 record-button-label = Nahrajte svůj hlas
 share-title-new = <bold>Pomozte nám</bold> najít další hlasy
 keep-track-profile = Sledujte svůj pokrok pomocí profilu
